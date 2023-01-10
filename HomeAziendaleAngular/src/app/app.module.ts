@@ -10,12 +10,14 @@ import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap'
 import { MatMenuModule } from '@angular/material/menu';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatIconModule} from '@angular/material/icon'
+import {MatIconModule} from '@angular/material/icon';
+import { BarraAmministratoreComponent } from './barra-amministratore/barra-amministratore.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    GestioneHomeComponent
+    GestioneHomeComponent,
+    BarraAmministratoreComponent
   ],
   imports: [
     BrowserModule,
