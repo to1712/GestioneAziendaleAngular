@@ -7,6 +7,11 @@ import { GestioneHomeComponent } from './gestione-home/gestione-home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { MatMenuModule } from '@angular/material/menu';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +23,10 @@ import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap'
     NgbModule,
     NgbPaginationModule,
     NgbAlertModule,
+    FontAwesomeModule,
+    MatMenuModule,
+    BrowserAnimationsModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

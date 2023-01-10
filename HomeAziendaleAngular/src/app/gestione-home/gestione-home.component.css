@@ -2073,6 +2073,10 @@ progress {
   border-color: #bcd0c7;
 }
 
+.matMenu {
+  background-color: red;
+}
+
 .table-info {
   --bs-table-bg: #cff4fc;
   --bs-table-striped-bg: #c5e8ef;
@@ -3575,7 +3579,7 @@ textarea.form-control-lg {
   content: "";
   border-top: 0.3em solid;
   border-right: 0.3em solid transparent;
-  border-bottom: 0;
+  border-bottom: 80;
   border-left: 0.3em solid transparent;
 }
 .dropdown-toggle:empty::after {
@@ -3593,7 +3597,7 @@ textarea.form-control-lg {
   color: #212529;
   text-align: left;
   list-style: none;
-  background-color: #fff;
+  background-color: rgb(163, 33, 33);
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
@@ -4211,6 +4215,7 @@ textarea.form-control-lg {
     flex-direction: row;
   }
   .navbar-expand-md .navbar-nav .dropdown-menu {
+    color:rgb(163, 33, 33);
     position: absolute;
   }
   .navbar-expand-md .navbar-nav .nav-link {
@@ -8802,7 +8807,7 @@ textarea.form-control-lg {
     justify-content: space-evenly !important;
   }
 
-  .align-items-md-start {
+  .align-ite-start {
     align-items: flex-start !important;
   }
 
