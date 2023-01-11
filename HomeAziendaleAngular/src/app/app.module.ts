@@ -11,7 +11,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
-import { BarraAmministratoreComponent } from './Amministrazione/barra-amministratore/barra-amministratore.component';
+import { BarraAmministratoreComponent } from './Amministrazione/barra/barra-amministratore.component';
 import { BarraTesoreriaComponent } from './Tesoreria/barra/barra-tesoreria.component';
 import { BarraMasterComponent } from './Master/barra/barra-master.component';
 import { BarraLogisticaComponent } from './Logistica/barra/barra-logistica.component'
