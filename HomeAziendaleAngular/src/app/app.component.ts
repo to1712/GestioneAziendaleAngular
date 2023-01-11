@@ -12,11 +12,10 @@ export class AppComponent implements OnInit {
     constructor(){
     }
     ngOnInit(): void {
-      /*const urlParams = new URLSearchParams(window.location.search);
-      var sessionId = urlParams.get("jsessionid");
+      const urlParams = new URLSearchParams(window.location.search);
+      var sessionId = urlParams.get("Jsessionid");
       this.res = sessionId;
       console.log(this.res);
-      */
     }
  
 }
