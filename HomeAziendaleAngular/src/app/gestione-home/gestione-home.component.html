@@ -1,7 +1,7 @@
 
             <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">TechnoVision</a>
+            <a class="navbar-brand ps-3" routerLink="mns">TechnoVision</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -22,7 +22,7 @@
                 <a mat-button [matMenuTriggerFor]="menu" class="nav-link dropdown-toggle" role="button"><mat-icon>person</mat-icon></a>
                 <mat-menu #menu="matMenu" class="matMenu">
                 <button mat-menu-item  href="#">Profilo</button>
-                <button mat-menu-item  href="doLogout">Logout</button>
+                <a mat-menu-item  href="http://localhost:8080/views/doLogout">Logout</a>
               </mat-menu>
             </a>
 
@@ -42,6 +42,9 @@
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav" [ngSwitch]="res">
                 <app-barra-amministratore *ngSwitchCase="'it'"></app-barra-amministratore>
+                <app-barra-tesoreria *ngSwitchCase="'tsr'"></app-barra-tesoreria>
+                <app-barra-master *ngSwitchCase="'mns'"></app-barra-master>
+                <app-barra-logistica *ngSwitchCase="'lgs'"></app-barra-logistica>
             </div>
             <div id="layoutSidenav_content">
                 <main>
