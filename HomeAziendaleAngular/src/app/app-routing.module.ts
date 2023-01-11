@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BarraAmministratoreComponent } from './Amministrazione/barra-amministratore/barra-amministratore.component';
+import { BarraAmministratoreComponent } from './Amministrazione/barra/barra-amministratore.component';
 import { BarraLogisticaComponent } from './Logistica/barra/barra-logistica.component';
 import { BarraMasterComponent } from './Master/barra/barra-master.component';
 import { BarraTesoreriaComponent } from './Tesoreria/barra/barra-tesoreria.component';
