@@ -4,14 +4,17 @@ import { BarraAmministratoreComponent } from './Amministrazione/barra/barra-ammi
 import { BarraLogisticaComponent } from './Logistica/barra/barra-logistica.component';
 import { BarraMasterComponent } from './Master/barra/barra-master.component';
 import { BarraTesoreriaComponent } from './Tesoreria/barra/barra-tesoreria.component';
-import { GestioneHomeComponent } from './gestione-home/gestione-home.component';
+import { HomeITComponent } from './Amministrazione/home-it/home-it.component';
+import { HomeLGSComponent } from './Logistica/home-lgs/home-lgs.component';
+import { HomeMSRComponent } from './Master/home-msr/home-msr.component';
+import { HomeTSRComponent } from './Tesoreria/home-tsr/home-tsr.component';
+
 
 const routes: Routes = [
-  {path:'',component:GestioneHomeComponent},
-  {path:'it',component:BarraAmministratoreComponent},
-  {path:'lgs',component:BarraLogisticaComponent},
-  {path:'mns',component:BarraMasterComponent},
-  {path:'tsr',component:BarraTesoreriaComponent},
+  {path:'it',component:HomeITComponent},
+  {path:'lgs',component:HomeLGSComponent},
+  {path:'mns',component:HomeMSRComponent},
+  {path:'tsr',component:HomeTSRComponent},
 ];
 
 @NgModule({

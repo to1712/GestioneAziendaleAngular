@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GestioneHomeComponent } from './gestione-home/gestione-home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -14,16 +13,23 @@ import {MatIconModule} from '@angular/material/icon';
 import { BarraAmministratoreComponent } from './Amministrazione/barra/barra-amministratore.component';
 import { BarraTesoreriaComponent } from './Tesoreria/barra/barra-tesoreria.component';
 import { BarraMasterComponent } from './Master/barra/barra-master.component';
-import { BarraLogisticaComponent } from './Logistica/barra/barra-logistica.component'
+import { BarraLogisticaComponent } from './Logistica/barra/barra-logistica.component';
+import { HomeTSRComponent } from './Tesoreria/home-tsr/home-tsr.component';
+import { HomeMSRComponent } from './Master/home-msr/home-msr.component';
+import { HomeLGSComponent } from './Logistica/home-lgs/home-lgs.component';
+import { HomeITComponent } from './Amministrazione/home-it/home-it.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    GestioneHomeComponent,
     BarraAmministratoreComponent,
     BarraTesoreriaComponent,
     BarraMasterComponent,
-    BarraLogisticaComponent
+    BarraLogisticaComponent,
+    HomeTSRComponent,
+    HomeMSRComponent,
+    HomeLGSComponent,
+    HomeITComponent
   ],
   imports: [
     BrowserModule,

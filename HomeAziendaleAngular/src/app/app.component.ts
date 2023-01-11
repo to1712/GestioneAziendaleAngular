@@ -7,8 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AppComponent implements OnInit {
-  ngOnInit(): void {
-    
-  }
+  
+    res:string|null = "";
+    constructor(){
+    }
+    ngOnInit(): void {
+      /*const urlParams = new URLSearchParams(window.location.search);
+      var sessionId = urlParams.get("jsessionid");
+      this.res = sessionId;
+      console.log(this.res);
+      */
+    }
  
 }
