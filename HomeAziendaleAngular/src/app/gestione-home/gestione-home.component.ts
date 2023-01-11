@@ -9,11 +9,16 @@ import { ServiceService } from '../service/service.service';
 
 })
 export class GestioneHomeComponent implements OnInit{
-  sessionId: string = "";
-  constructor(private service: ServiceService,private route: ActivatedRoute ){}
-  
+    it=false;
+    mns=false;
+
     ngOnInit(): void {
-      this.service.getRuolo(this.sessionId);
+      const urlParams = new URLSearchParams(window.location.search);
+      var sessionId = urlParams.get("jsessionid");
+      if(sessionId === 'it')
+        this.it = true;
+      else if(sessionId === 'mns')
+      this.mns = true;
     }
 
 }
