@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-lgs.component.css']
 })
 export class HomeLGSComponent {
-
+  mostraHome = true;
 }

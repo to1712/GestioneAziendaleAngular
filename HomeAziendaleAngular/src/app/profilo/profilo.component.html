@@ -1,1 +1,51 @@
-<span >{{utente?.nome}}</span>
+<main>
+  <div class="container-fluid px-4">
+    <h1 class="mt-4">Profilo</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Profilo</li>
+    </ol>
+      <div class="container py-15 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+              <div class="col col-lg-16 mb-4 mb-lg-0">
+                  <div class="card mb-3" style="border-radius: .5rem;">
+                      <div class="row g-0">
+                          <div class="col-md-4 gradient-custom text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                                  alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
+                              <h5>{{utente?.nome}} {{utente?.cognome}}</h5>
+                              <p>pizzaiolo</p>
+                          </div>
+                          <div class="col-md-8">
+                              <div class="card-body p-4">
+                                  <h6>Informazioni</h6>
+                                  <hr class="mt-0 mb-4">
+                                  <div class="row pt-1">
+                                      <div class="col-6 mb-3">
+                                          <h6>{{utente?.email}}</h6>
+                                          <p class="text-muted">puzzo@culo.com</p>
+                                      </div>
+                                      <div class="col-6 mb-3">
+                                          <h6>Telefono</h6>
+                                          <p class="text-muted">123 456 789</p>
+                                      </div>
+                                  </div>
+                                  <hr class="mt-0 mb-4">
+                                  <div class="row pt-1">
+                                      <div class="col-6 mb-3">
+                                          <h6>Sede</h6>
+                                          <p class="text-muted">Lorem ipsum</p>
+                                      </div>
+                                      <div class="col-6 mb-3">
+                                          <h6>Stipendio</h6>
+                                          <p class="text-muted">{{utente?.stipendio}}</p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+</main>

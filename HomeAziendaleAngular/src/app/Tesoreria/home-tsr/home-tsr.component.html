@@ -10,24 +10,24 @@
                   <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
                 </div>-->
                 <form class="d-none d-md-inline-block ms-auto me-0 me-md-3 my-2 my-md-0">
-    
+
                   <div class="input-group">
                     <input class="form-control" type="text" placeholder="Cerca" aria-label="Search for..." aria-describedby="btnNavbarSearch" />
                     <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
                     </div>
-    
+
                 </form>
-    
+
                   <a class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                     <a mat-button [matMenuTriggerFor]="menu" class="nav-link dropdown-toggle" role="button"><mat-icon>person</mat-icon></a>
                     <mat-menu #menu="matMenu" class="matMenu">
-                    <button mat-menu-item  href="#">Profilo</button>
+                    <button mat-menu-item  (click)="mostraHome = !mostraHome">Profilo</button>
                     <a mat-menu-item  href="http://localhost:8080/views/doLogout">Logout</a>
                   </mat-menu>
                 </a>
-    
+
                 <!-- Navbar-->
-    
+
                   <!--<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -36,22 +36,28 @@
                             <li><a class="dropdown-item" href="doLogout">Logout</a></li>
                         </ul>
                     </li>-->
-    
-    
+
+
             </nav>
             <div id="layoutSidenav">
                 <div id="layoutSidenav_nav">
                     <app-barra-tesoreria></app-barra-tesoreria>
                 </div>
                 <div id="layoutSidenav_content">
-                    <main>
-                      <div class="container-fluid px-4">
-                        <h1 class="mt-4">Home</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Home</li>
-                        </ol>
-                      </div>
-                    </main>
+                  <div id="layoutSidenav_content" *ngIf="mostraHome; else profilo">
+                    <ng-template [ngTemplateOutlet]="home"></ng-template></div>
+
+                        <ng-template #home>
+                          <div class="container-fluid px-4">
+                            <h1 class="mt-4">Home</h1>
+                            <ol class="breadcrumb mb-4">
+                                <li class="breadcrumb-item active">Home</li>
+                            </ol>
+                          </div>
+                        </ng-template>
+                        <ng-template #profilo>
+                          <app-profilo></app-profilo>
+                        </ng-template>
                     <footer class="py-4 bg-light mt-auto">
                         <div class="container-fluid px-4">
                             <div class="d-flex align-items-center justify-content-between small">
@@ -66,7 +72,7 @@
                     </footer>
                 </div>
             </div>
-    
-    
+
+
 
 
