@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { observable, Observable } from 'rxjs';
 import { ServiceService } from '../service/service.service';
 import { Utente } from '../Utente';
 
@@ -10,26 +10,22 @@ import { Utente } from '../Utente';
   styleUrls: ['./profilo.component.css']
 })
 export class ProfiloComponent implements OnInit{
-  utente?:Utente;
-  sessionId:string="";
+  @Input()utente?:Utente;
+  @Input()sessionId:string|null="";
   constructor(private route: ActivatedRoute,private service: ServiceService){}
   ngOnInit(): void {
-    //console.log("ciao");
-    const urlParams = new URLSearchParams(window.location.search);
-    var sessionId2 = urlParams.get("Jsessionid");
-    console.log(sessionId2);
     var sessionId = this.route.queryParams.subscribe(
         params => {
-      var sessionId = params['Jsessionid'];
-      console.log(params['Jsessionid']);
+      var sessionId = this.service.getSession();
       if (sessionId != null){
-        console.log("sono dentro");
+        console.log(sessionId);
         this.sessionId = sessionId;
         var obs: Observable<Utente> = this.service.getUtente(sessionId);
-        obs.subscribe(ut => this.utente = ut);
-        console.log(obs);
+        obs.subscribe(ut => {this.utente = ut});
       }
       } );
+      
+      
   }
   
 }

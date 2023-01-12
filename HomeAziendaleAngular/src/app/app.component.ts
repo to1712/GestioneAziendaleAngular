@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from './service/service.service';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +10,15 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   
     res:string|null = "";
-    constructor(){
+    constructor(private service: ServiceService){
     }
     ngOnInit(): void {
       const urlParams = new URLSearchParams(window.location.search);
       var sessionId = urlParams.get("Jsessionid");
       this.res = sessionId;
-      console.log(this.res);
+      this.service.getUtente(sessionId);
+      this.service.setSession(sessionId);
     }
+   
  
 }

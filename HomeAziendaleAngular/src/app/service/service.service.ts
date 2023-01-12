@@ -9,12 +9,19 @@ import { Observable } from 'rxjs';
 })
 export class ServiceService {
   private url : string = "http://localhost:8080";
+  s:string | null="";
   constructor(private http: HttpClient) {}
 
-  getUtente(JsessionId:string):Observable<Utente>{
-    var utente:Observable<Utente>=this.http.post<Utente>(this.url + "/getUtente?JsessionId=" + JsessionId,{});
-    console.log("we");
+  getUtente(JsessionId:string|null):Observable<Utente>{
+    var utente:Observable<Utente>=this.http.post<Utente>(this.url + "/getUtente?Jsessionid=" + JsessionId,{});
+    console.log(utente);
     return utente;
+  }
+  setSession(s :string|null){
+    this.s=s;
+  }
+  getSession(){
+    return this.s;
   }
 
 
