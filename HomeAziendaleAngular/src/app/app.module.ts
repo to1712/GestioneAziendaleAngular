@@ -18,8 +18,8 @@ import { HomeTSRComponent } from './Tesoreria/home-tsr/home-tsr.component';
 import { HomeMSRComponent } from './Master/home-msr/home-msr.component';
 import { HomeLGSComponent } from './Logistica/home-lgs/home-lgs.component';
 import { HomeITComponent } from './Amministrazione/home-it/home-it.component';
-import { ProfiloComponent } from './profilo/profilo.component'
-
+import { ProfiloComponent } from './profilo/profilo.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +43,7 @@ import { ProfiloComponent } from './profilo/profilo.component'
     MatMenuModule,
     BrowserAnimationsModule,
     MatIconModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

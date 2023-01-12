@@ -8,9 +8,11 @@ import { HomeITComponent } from './Amministrazione/home-it/home-it.component';
 import { HomeLGSComponent } from './Logistica/home-lgs/home-lgs.component';
 import { HomeMSRComponent } from './Master/home-msr/home-msr.component';
 import { HomeTSRComponent } from './Tesoreria/home-tsr/home-tsr.component';
+import { ProfiloComponent } from './profilo/profilo.component';
 
 
 const routes: Routes = [
+  {path:'profilo',component:ProfiloComponent},
   {path:'it',component:HomeITComponent},
   {path:'lgs',component:HomeLGSComponent},
   {path:'mns',component:HomeMSRComponent},
