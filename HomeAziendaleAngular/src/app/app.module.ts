@@ -20,6 +20,16 @@ import { HomeLGSComponent } from './Logistica/home-lgs/home-lgs.component';
 import { HomeITComponent } from './Amministrazione/home-it/home-it.component';
 import { ProfiloComponent } from './profilo/profilo.component';
 import { HttpClientModule } from '@angular/common/http';
+import { IncassiComponent } from './Amministrazione/Dashboard/incassi/incassi.component';
+import { SpeseComponent } from './Amministrazione/Dashboard/spese/spese.component';
+import { SlogisticaComponent } from './Amministrazione/Dashboard/slogistica/slogistica.component';
+import { SamministrazioneComponent } from './Amministrazione/Dashboard/samministrazione/samministrazione.component';
+import { StesoreriaComponent } from './Amministrazione/Dashboard/stesoreria/stesoreria.component';
+import { FornitoriComponent } from './Logistica/Dashboard/fornitori/fornitori.component';
+import { MagazzinoComponent } from './Logistica/Dashboard/magazzino/magazzino.component';
+import { SpedizioniComponent } from './Logistica/Dashboard/spedizioni/spedizioni.component';
+import { StipendiComponent } from './Tesoreria/Dashboard/stipendi/stipendi.component';
+import { BilancioComponent } from './Tesoreria/Dashboard/bilancio/bilancio.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +41,17 @@ import { HttpClientModule } from '@angular/common/http';
     HomeMSRComponent,
     HomeLGSComponent,
     HomeITComponent,
-    ProfiloComponent
+    ProfiloComponent,
+    IncassiComponent,
+    SpeseComponent,
+    SlogisticaComponent,
+    SamministrazioneComponent,
+    StesoreriaComponent,
+    FornitoriComponent,
+    MagazzinoComponent,
+    SpedizioniComponent,
+    StipendiComponent,
+    BilancioComponent
   ],
   imports: [
     BrowserModule,
