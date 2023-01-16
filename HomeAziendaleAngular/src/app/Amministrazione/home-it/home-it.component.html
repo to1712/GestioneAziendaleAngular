@@ -1,5 +1,6 @@
+<div id="home" class="sb-nav-fixed sb-sidenav-toggled">
+           <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 
-            <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
                 <!-- Navbar Brand-->
                 <a class="navbar-brand ps-3" routerLink="/it">TechnoVision</a>
                 <!-- Sidebar Toggle-->
@@ -40,13 +41,14 @@
 
             </nav>
             <div id="layoutSidenav">
-                <div id="layoutSidenav_nav">
-                    <app-barra-amministratore></app-barra-amministratore>
+                <div id="layoutSidenav_nav" >
+                    <app-barra-amministratore (eventFiliali)="riceviFiliali($event)"></app-barra-amministratore>
                 </div>
+                
                 <div id="layoutSidenav_content">
-                <div id="layoutSidenav_content" *ngIf="mostraHome; else profilo">
+                <main>
+                <div *ngIf="filiali; else profilo">
                   <ng-template [ngTemplateOutlet]="home"></ng-template></div>
-
                       <ng-template #home>
                         <div class="container-fluid px-4">
                           <h1 class="mt-4">Home</h1>
@@ -58,8 +60,8 @@
                       <ng-template #profilo>
                         <app-profilo></app-profilo>
                       </ng-template>
-
-                    <footer class="py-4 bg-light mt-auto">
+                    </main>
+                    <footer class="py-4 bg-light mt-auto" >
                         <div class="container-fluid px-4">
                             <div class="d-flex align-items-center justify-content-between small">
                                 <div class="text-muted">Copyright &copy; TechnoVision 2022</div>
@@ -71,8 +73,11 @@
                             </div>
                         </div>
                     </footer>
-                </div>
-              </div>
+                  </div>
+                  </div>
+              <script src="assets/js/scripts.js"></script>
+            </div>
 
+            
 
 

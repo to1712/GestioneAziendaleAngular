@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { BarraAmministratoreComponent } from '../barra/barra-amministratore.component';
 
 @Component({
   selector: 'app-home-it',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeITComponent implements OnInit{
   mostraHome = true;
-
-  ngOnInit(): void {
-
+  filiali=true;
+  constructor(){}
+  ngOnInit(): void {}
+  riceviFiliali(value: boolean){
+    this.filiali=value;
   }
 
 }
