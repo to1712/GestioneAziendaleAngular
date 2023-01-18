@@ -21,7 +21,7 @@
                   <a class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                     <a mat-button [matMenuTriggerFor]="menu" class="nav-link dropdown-toggle" role="button"><mat-icon>person</mat-icon></a>
                     <mat-menu #menu="matMenu" class="matMenu">
-                    <button mat-menu-item  (click)="mostraHome = !mostraHome">Profilo</button>
+                    <button mat-menu-item >Profilo</button>
                     <a mat-menu-item  href="http://localhost:8080/views/doLogout">Logout</a>
                   </mat-menu>
                 </a>
@@ -45,7 +45,7 @@
                 </div>
                 <div id="layoutSidenav_content">
                   <div id="layoutSidenav_content">
-                    <div id="layoutSidenav_content" *ngIf="mostraHome; else profilo">
+                    <div id="layoutSidenav_content" >
                       <ng-template [ngTemplateOutlet]="home"></ng-template></div>
 
                           <ng-template #home>

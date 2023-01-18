@@ -1,4 +1,4 @@
-<div id="home" class="sb-nav-fixed sb-sidenav-toggled">
+<div id="home" class="sb-nav-fixed">
             <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
                 <!-- Navbar Brand-->
                 <a class="navbar-brand ps-3" routerLink="tsr">TechnoVision</a>
@@ -21,7 +21,7 @@
                   <a class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                     <a mat-button [matMenuTriggerFor]="menu" class="nav-link dropdown-toggle" role="button"><mat-icon>person</mat-icon></a>
                     <mat-menu #menu="matMenu" class="matMenu">
-                    <button mat-menu-item  (click)="mostraHome = !mostraHome">Profilo</button>
+                    <button mat-menu-item  (click)="visualizza='pro'">Profilo</button>
                     <a mat-menu-item  href="http://localhost:8080/views/doLogout">Logout</a>
                   </mat-menu>
                 </a>
@@ -41,12 +41,15 @@
             </nav>
             <div id="layoutSidenav">
                 <div id="layoutSidenav_nav">
-                    <app-barra-tesoreria></app-barra-tesoreria>
+                    <app-barra-tesoreria (event)="riceviComponent($event)"></app-barra-tesoreria>
                 </div>
                 <div id="layoutSidenav_content">
-                  <div *ngIf="mostraHome; else profilo">
-                    <ng-template [ngTemplateOutlet]="home"></ng-template></div>
-
+                  <div [ngSwitch]=visualizza>
+                    <ng-template *ngSwitchCase="''" [ngTemplateOutlet]="home"></ng-template>
+                    <ng-template *ngSwitchCase="'bil'" [ngTemplateOutlet]="bilancio"></ng-template>
+                    <ng-template *ngSwitchCase="'sti'" [ngTemplateOutlet]="stipendi"></ng-template>
+                    <ng-template *ngSwitchCase="'pro'" [ngTemplateOutlet]="profilo"></ng-template>
+                  </div>
                         <ng-template #home>
                           <div class="container-fluid px-4">
                             <h1 class="mt-4">Home</h1>
@@ -57,6 +60,12 @@
                         </ng-template>
                         <ng-template #profilo>
                           <app-profilo></app-profilo>
+                        </ng-template>
+                        <ng-template #bilancio>
+                          <app-bilancio></app-bilancio>
+                        </ng-template>
+                        <ng-template #stipendi>
+                          <app-stipendi></app-stipendi>
                         </ng-template>
                     <footer class="py-4 bg-light mt-auto">
                         <div class="container-fluid px-4">

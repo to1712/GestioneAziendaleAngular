@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewChecked, Component, Input, OnInit } from '@angular/core';
 import { BarraAmministratoreComponent } from '../barra/barra-amministratore.component';
 
 @Component({
@@ -6,13 +6,13 @@ import { BarraAmministratoreComponent } from '../barra/barra-amministratore.comp
   templateUrl: './home-it.component.html',
   styleUrls: ['./home-it.component.css']
 })
-export class HomeITComponent implements OnInit{
-  mostraHome = true;
-  filiali=true;
+export class HomeITComponent implements OnInit,AfterViewChecked{
+  visualizza:string="";
   constructor(){}
   ngOnInit(): void {}
-  riceviFiliali(value: boolean){
-    this.filiali=value;
+  ngAfterViewChecked(): void {}
+  riceviComponent(value: string){
+    this.visualizza=value;
   }
 
 }

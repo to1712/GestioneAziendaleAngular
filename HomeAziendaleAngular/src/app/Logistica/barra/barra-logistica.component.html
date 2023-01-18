@@ -2,7 +2,7 @@
     <div class="sb-sidenav-menu">
         <div class="nav">
             <br><br><br>
-            <a class="nav-link" href="gestione-home.html">
+            <a class="nav-link" (click)="componentView('')">
                 <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
                 Home
             </a>
@@ -14,11 +14,11 @@
             </a>
             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                 <nav class="sb-sidenav-menu-nested nav">
-                    <a class="nav-link" href="layout-static.html">Magazzino</a>
-                    <a class="nav-link" href="layout-sidenav-light.html">Spedizioni</a>
+                    <a class="nav-link" (click)="componentView('mag')">Magazzino</a>
+                    <a class="nav-link" (click)="componentView('spe')">Spedizioni</a>
                 </nav>
             </div>
-            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+            <a class="nav-link collapsed" (click)="componentView('for')" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                 <div class="sb-nav-link-icon"><i class="fas fa-hand-holding-usd"></i></div>
                 Fornitori
             </a>

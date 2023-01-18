@@ -1,17 +1,18 @@
 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
     <div class="sb-sidenav-menu">
         <div class="nav">
-            <a class="nav-link" href="index.html">
+            <br><br><br>
+            <a class="nav-link" (click)="componentView('')">
                 <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
                 Home
             </a>
             <div class="sb-sidenav-menu-heading">Interface</div>
-            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+            <a class="nav-link" (click)="componentView('bil')" >
                 <div class="sb-nav-link-icon"><i class="fas fa-industry"></i></div>
                 Bilancio
             </a>
             
-            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+            <a class="nav-link" (click)="componentView('sti')">
                 <div class="sb-nav-link-icon"><i class="fas fa-hand-holding-usd"></i></div>
                 Stipendi
             </a>

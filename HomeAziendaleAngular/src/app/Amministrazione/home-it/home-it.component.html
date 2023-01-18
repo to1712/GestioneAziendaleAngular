@@ -1,4 +1,4 @@
-<div id="home" class="sb-nav-fixed sb-sidenav-toggled">
+<div id="home" class="sb-nav-fixed">
            <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 
                 <!-- Navbar Brand-->
@@ -22,7 +22,7 @@
                   <a class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                     <a mat-button [matMenuTriggerFor]="menu" class="nav-link dropdown-toggle" role="button"><mat-icon>person</mat-icon></a>
                     <mat-menu #menu="matMenu" class="matMenu">
-                    <button mat-menu-item (click)="mostraHome = !mostraHome">Profilo</button>
+                    <button mat-menu-item (click)="visualizza='pro'">Profilo</button>
                     <a mat-menu-item  href="http://localhost:8080/views/doLogout">Logout</a>
                   </mat-menu>
                 </a>
@@ -42,12 +42,19 @@
             </nav>
             <div id="layoutSidenav">
                 <div id="layoutSidenav_nav" >
-                    <app-barra-amministratore (eventFiliali)="riceviFiliali($event)"></app-barra-amministratore>
+                    <app-barra-amministratore (event)="riceviComponent($event)"></app-barra-amministratore>
                 </div>
                 <div id="layoutSidenav_content">
                 <main>
-                <div *ngIf="filiali; else profilo">
-                  <ng-template [ngTemplateOutlet]="home"></ng-template></div>
+                <div [ngSwitch]=visualizza>
+                  <ng-template *ngSwitchCase="''" [ngTemplateOutlet]="home"></ng-template>
+                  <ng-template *ngSwitchCase="'inc'" [ngTemplateOutlet]="incassi"></ng-template>
+                  <ng-template *ngSwitchCase="'pro'" [ngTemplateOutlet]="profilo"></ng-template>
+                  <ng-template *ngSwitchCase="'sA'" [ngTemplateOutlet]="samministrazione"></ng-template>
+                  <ng-template *ngSwitchCase="'sL'" [ngTemplateOutlet]="slogistica"></ng-template>
+                  <ng-template *ngSwitchCase="'sT'" [ngTemplateOutlet]="stesoreria"></ng-template>
+                  <ng-template *ngSwitchCase="'sp'" [ngTemplateOutlet]="spese"></ng-template>
+                </div>
                       <ng-template #home>
                         <div class="container-fluid px-4">
                           <h1 class="mt-4">Home</h1>
@@ -58,6 +65,21 @@
                       </ng-template>
                       <ng-template #profilo>
                         <app-profilo></app-profilo>
+                      </ng-template>
+                      <ng-template #incassi>
+                        <app-incassi></app-incassi>
+                      </ng-template>
+                      <ng-template #spese>
+                        <app-spese></app-spese>
+                      </ng-template>
+                      <ng-template #samministrazione>
+                        <app-samministrazione></app-samministrazione>
+                      </ng-template>
+                      <ng-template #slogistica>
+                        <app-slogistica></app-slogistica>
+                      </ng-template>
+                      <ng-template #stesoreria>
+                        <app-stesoreria></app-stesoreria>
                       </ng-template>
                     </main>
                     <footer class="py-4 bg-light mt-auto" >

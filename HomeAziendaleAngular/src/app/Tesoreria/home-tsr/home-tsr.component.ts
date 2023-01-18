@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-tsr.component.css']
 })
 export class HomeTSRComponent {
-  mostraHome = true;
+  visualizza:string="";
+  riceviComponent(value: string){
+    this.visualizza=value;
+  }
 }

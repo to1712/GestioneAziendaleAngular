@@ -8,11 +8,11 @@ import { HomeITComponent } from '../home-it/home-it.component';
   styleUrls: ['./barra-amministratore.component.css']
 })
 export class BarraAmministratoreComponent {
-  @Output() eventFiliali=new EventEmitter<boolean>();
-  filiali=true;
+  @Output() event=new EventEmitter<string>();
+  visualizza:string="";
   constructor(){}
-  filiale(){
-    this.filiali=false;
-    this.eventFiliali.emit(this.filiali);
+  componentView(value:string){
+    this.visualizza=value;
+    this.event.emit(this.visualizza);
   }
 }

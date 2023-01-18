@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-barra-tesoreria',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./barra-tesoreria.component.css']
 })
 export class BarraTesoreriaComponent {
-
+  @Output() event=new EventEmitter<string>();
+  visualizza:string="";
+  constructor(){}
+  componentView(value:string){
+    this.visualizza=value;
+    this.event.emit(this.visualizza);
+  }
 }
