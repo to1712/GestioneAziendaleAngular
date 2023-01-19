@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { MatMenuModule } from '@angular/material/menu';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -30,6 +28,14 @@ import { MagazzinoComponent } from './Logistica/Dashboard/magazzino/magazzino.co
 import { SpedizioniComponent } from './Logistica/Dashboard/spedizioni/spedizioni.component';
 import { StipendiComponent } from './Tesoreria/Dashboard/stipendi/stipendi.component';
 import { BilancioComponent } from './Tesoreria/Dashboard/bilancio/bilancio.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +58,7 @@ import { BilancioComponent } from './Tesoreria/Dashboard/bilancio/bilancio.compo
     SpedizioniComponent,
     StipendiComponent,
     BilancioComponent
+
   ],
   imports: [
     BrowserModule,
@@ -64,6 +71,13 @@ import { BilancioComponent } from './Tesoreria/Dashboard/bilancio/bilancio.compo
     BrowserAnimationsModule,
     MatIconModule,
     HttpClientModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatInputModule,
+    
+
   ],
   providers: [],
   bootstrap: [AppComponent]
