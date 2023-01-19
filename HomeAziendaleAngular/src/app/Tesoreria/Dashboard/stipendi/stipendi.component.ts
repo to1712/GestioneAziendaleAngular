@@ -15,7 +15,7 @@ import {MatTableDataSource} from '@angular/material/table';
 export class StipendiComponent implements OnInit,AfterViewInit {
   utenti:Utente[]=[];
   displayedColumns: string[] = ['nome', 'cognome', 'stipendio'];
-  dataSource!: MatTableDataSource<Utente>;
+  dataSource: MatTableDataSource<Utente>=new MatTableDataSource();
   @ViewChild(MatPaginator) paginator!:MatPaginator;
   @ViewChild(MatSort) sort!:MatSort;
   
