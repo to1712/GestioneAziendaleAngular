@@ -1,10 +1,9 @@
-import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
-import { Observable } from 'rxjs';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { DatabaseService } from 'src/app/service/database.service';
 import { Utente } from 'src/app/Utente';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 
 
 @Component({
@@ -18,8 +17,8 @@ export class StipendiComponent implements OnInit,AfterViewInit {
   dataSource: MatTableDataSource<Utente>=new MatTableDataSource();
   @ViewChild(MatPaginator) paginator!:MatPaginator;
   @ViewChild(MatSort) sort!:MatSort;
- 
-  
+
+
   constructor(private s:DatabaseService){
     this.s.getUtenti().subscribe((ut)=>{this.utenti=ut
       this.dataSource = new MatTableDataSource(this.utenti)

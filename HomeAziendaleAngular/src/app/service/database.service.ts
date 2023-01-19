@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Utente } from '../Utente';
+import { Fornitore } from '../Fornitore';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,10 @@ export class DatabaseService {
     return utenti;
   }
 
+  getFornitori():Observable<Fornitore[]>{
+    var fornitori:Observable<Fornitore[]> = this.http.post<Fornitore[]>(this.url + "/getFornitori",{});
+    return fornitori;
+  }
 
 
 }
