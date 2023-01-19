@@ -55,12 +55,12 @@ window.addEventListener('DOMContentLoaded', event => {
   if(isExpanded){
   document.getElementById("open").classList.add("collapsed");
   document.getElementById("open").setAttribute("aria-expanded", "false");
-  document.getElementById("collapseLayouts").classList.toggle("show");
+  document.getElementById("collapseLayouts").classList.remove("show");
   isExpanded = false;
   }else{
   document.getElementById("open").classList.remove("collapsed");
   document.getElementById("open").setAttribute("aria-expanded", "true");
-  document.getElementById("collapseLayouts").classList.toggle("show");
+  document.getElementById("collapseLayouts").classList.add("show");
   isExpanded = true;
   }
   });

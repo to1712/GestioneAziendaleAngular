@@ -1,10 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BarraAmministratoreComponent } from './Amministrazione/barra/barra-amministratore.component';
-import { BarraLogisticaComponent } from './Logistica/barra/barra-logistica.component';
-import { BarraMasterComponent } from './Master/barra/barra-master.component';
-import { BarraTesoreriaComponent } from './Tesoreria/barra/barra-tesoreria.component';
-import { HomeITComponent } from './Amministrazione/home-it/home-it.component';
+import { HomeMNSComponent } from './Amministrazione/home-mns/home-mns.component';
 import { HomeLGSComponent } from './Logistica/home-lgs/home-lgs.component';
 import { HomeMSRComponent } from './Master/home-msr/home-msr.component';
 import { HomeTSRComponent } from './Tesoreria/home-tsr/home-tsr.component';
@@ -13,9 +9,9 @@ import { ProfiloComponent } from './profilo/profilo.component';
 
 const routes: Routes = [
   {path:'profilo',component:ProfiloComponent},
-  {path:'it',component:HomeITComponent},
+  {path:'mns',component:HomeMNSComponent},
   {path:'lgs',component:HomeLGSComponent},
-  {path:'mns',component:HomeMSRComponent},
+  {path:'it',component:HomeMSRComponent},
   {path:'tsr',component:HomeTSRComponent},
 ];
 
