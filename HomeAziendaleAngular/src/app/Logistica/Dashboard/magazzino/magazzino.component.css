@@ -1,7 +1,24 @@
 table {
     width: 100%;
   }
-  
+.container{
+    justify-items: center;
+    width: 100%;
+}
+.aggiungi{
+    margin: auto;
+    width: 50%;
+}
+.tabella{
+    margin: auto;
+    width: 70%;
+    margin-bottom: 5%;
+}
+#bottone{
+    display: block;
+    margin: auto;
+
+}
   .mat-elevation-z8{
   overflow-x:auto;
   width: 100%;

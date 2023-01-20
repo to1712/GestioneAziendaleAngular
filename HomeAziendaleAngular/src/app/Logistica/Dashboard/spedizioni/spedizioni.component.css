@@ -1,0 +1,10 @@
+.container{
+  justify-items: center;
+  width:100%;
+}
+.container mat-form-field + mat-form-field {
+    margin-left: 2px;
+  }
+.spedizioni{
+  margin: auto;
+}

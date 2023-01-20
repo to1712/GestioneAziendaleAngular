@@ -35,6 +35,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CdkTableModule } from '@angular/cdk/table';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
 
 
 
@@ -80,6 +82,8 @@ import { CdkTableModule } from '@angular/cdk/table';
     MatInputModule,
     ScrollingModule,
     CdkTableModule,
+    MatOptionModule,
+    MatSelectModule,
     
 
   ],
