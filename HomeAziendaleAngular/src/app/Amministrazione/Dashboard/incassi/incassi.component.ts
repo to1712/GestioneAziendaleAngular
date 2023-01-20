@@ -22,7 +22,6 @@ export class IncassiComponent {
 
   constructor(private d:DatabaseService){
     this.d.getFiliali().subscribe((fi)=>{this.filiali=fi
-      console.log(fi[0].incasso_dic);
       this.dataSource = new MatTableDataSource(this.filiali)
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;

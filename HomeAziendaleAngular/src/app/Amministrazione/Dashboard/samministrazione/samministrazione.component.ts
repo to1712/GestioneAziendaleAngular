@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -10,7 +10,7 @@ import { Utente } from 'src/app/Utente';
   templateUrl: './samministrazione.component.html',
   styleUrls: ['./samministrazione.component.css']
 })
-export class SamministrazioneComponent {
+export class SamministrazioneComponent implements OnInit {
   utenti:Utente[]=[];
   displayedColumns: string[] = ['nome', 'cognome','stipendio'];
   dataSource: MatTableDataSource<Utente>=new MatTableDataSource();
@@ -19,22 +19,25 @@ export class SamministrazioneComponent {
 
 
   constructor(private s:DatabaseService){
-    this.s.getUtenti().subscribe((ut)=>{
-     for(let i=0; i<ut.length; i++){
-      if(ut[i].ruolo=="mns"){
-        this.utenti[i]=ut[i];
-        //console.log( this.utenti);
-      }
-     }
-     //console.log(ut);
-      console.log(this.utenti);
-      this.dataSource = new MatTableDataSource(this.utenti);
-      console.log(this.dataSource);
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
-    })
-
+    
   }
+  ngOnInit(): void {
+    this.s.getUtenti().subscribe((ut)=>{
+      for(let i=0; i<ut.length; i++){
+       if(ut[i].ruolo=="mns"){
+         this.utenti.push(ut[i]);
+         //console.log( this.utenti);
+       }
+      }
+      //console.log(ut);
+       console.log(this.utenti);
+       this.dataSource = new MatTableDataSource(this.utenti);
+       console.log(this.dataSource);
+       this.dataSource.paginator = this.paginator;
+       this.dataSource.sort = this.sort;
+     })
+  }
+
   
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
