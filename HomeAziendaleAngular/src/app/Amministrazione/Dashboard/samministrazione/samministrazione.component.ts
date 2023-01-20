@@ -27,7 +27,7 @@ export class SamministrazioneComponent {
       }
      }
      //console.log(ut);
-      //onsole.log(this.utenti);
+      console.log(this.utenti);
       this.dataSource = new MatTableDataSource(this.utenti);
       console.log(this.dataSource);
       this.dataSource.paginator = this.paginator;
