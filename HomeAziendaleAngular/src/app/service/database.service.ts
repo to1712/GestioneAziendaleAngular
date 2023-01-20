@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Utente } from '../Utente';
 import { Fornitore } from '../Fornitore';
+import { Filiale } from '../Filiale';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,11 @@ export class DatabaseService {
   getFornitori():Observable<Fornitore[]>{
     var fornitori:Observable<Fornitore[]> = this.http.post<Fornitore[]>(this.url + "/getFornitori",{});
     return fornitori;
+  }
+
+  getFiliali():Observable<Filiale[]>{
+    var filiali:Observable<Filiale[]> = this.http.post<Filiale[]>(this.url + "/getFiliali",{});
+    return filiali;
   }
 
 

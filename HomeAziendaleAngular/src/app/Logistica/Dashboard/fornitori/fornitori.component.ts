@@ -12,7 +12,7 @@ import { DatabaseService } from 'src/app/service/database.service';
 })
 export class FornitoriComponent {
   fornitori:Fornitore[]=[];
-  displayedColumns:string[] = ['nome', 'città_provenienza'];
+  displayedColumns:string[] = ['nome', 'citta_provenienza'];
   dataSource:MatTableDataSource<Fornitore> = new MatTableDataSource();
   @ViewChild(MatPaginator) paginator!:MatPaginator;
   @ViewChild(MatSort) sort!:MatSort;
