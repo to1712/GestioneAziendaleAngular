@@ -37,6 +37,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CdkTableModule } from '@angular/cdk/table';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -83,7 +84,7 @@ import { MatOptionModule } from '@angular/material/core';
     CdkTableModule,
     MatOptionModule,
     MatSelectModule,
-    
+    FormsModule,
 
   ],
   providers: [],

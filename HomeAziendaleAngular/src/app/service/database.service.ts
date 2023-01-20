@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Utente } from '../Utente';
@@ -40,9 +40,16 @@ export class DatabaseService {
     var spedizioni:Observable<Spedizione[]> = this.http.post<Spedizione[]>(this.url + "/getSpedizioni",{});
     return spedizioni;
   }
-  addSpedizione(sp:Spedizione):Observable<Spedizione[]>{
-    var spedizioni:Observable<Spedizione[]> = this.http.post<Spedizione[]>(this.url + "/addSpedizione",sp);
-    return spedizioni;
+  addSpedizione(prodotto:string,fornitore:string,filiale:string,qta:number):Observable<any>{
+    let dati = {
+      prodotto: prodotto,
+      fornitore: fornitore,
+      filiale: filiale,
+      qta: qta
+    };
+    return this.http.post<any>(this.url + "/addSpedizione",dati);
+
+
   }
 
 

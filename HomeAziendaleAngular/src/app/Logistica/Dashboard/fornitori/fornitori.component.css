@@ -1,5 +1,20 @@
+.container{
+  justify-items: center;
+  width:100%;
+}
+.container mat-form-field + mat-form-field {
+    margin-left: 2px;
+}
+
 table {
   width: 100%;
+}
+
+.tabella{
+  margin: auto;
+  margin-bottom:5%;
+  width: 70%;
+  margin-top: 5%;
 }
 
 .mat-elevation-z8{

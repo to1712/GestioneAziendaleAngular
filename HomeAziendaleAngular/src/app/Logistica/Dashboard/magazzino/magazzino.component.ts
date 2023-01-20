@@ -10,7 +10,7 @@ import { DatabaseService } from 'src/app/service/database.service';
   templateUrl: './magazzino.component.html',
   styleUrls: ['./magazzino.component.css']
 })
-export class MagazzinoComponent {
+export class MagazzinoComponent{
   magazzino:Magazzino[]=[];
   displayedColumns:string[] = ['id_prodotto','id_fornitore','qta'];
   dataSource:MatTableDataSource<Magazzino> = new MatTableDataSource();
@@ -23,7 +23,12 @@ export class MagazzinoComponent {
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     })
+
+
   }
+
+
+
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

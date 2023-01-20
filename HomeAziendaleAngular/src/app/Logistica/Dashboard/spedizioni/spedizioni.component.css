@@ -19,6 +19,8 @@ table {
 .tabella{
   margin: auto;
   margin-bottom:5%;
+  width: 70%;
+  margin-top: 5%;
 }
 .mat-elevation-z8{
 overflow-x:auto;

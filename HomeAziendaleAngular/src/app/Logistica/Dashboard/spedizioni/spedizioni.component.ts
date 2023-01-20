@@ -1,4 +1,4 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ViewChild, OnInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSelectChange } from '@angular/material/select';
 import { MatSort } from '@angular/material/sort';
@@ -14,13 +14,18 @@ import { Spedizione } from 'src/app/Spedizione';
   templateUrl: './spedizioni.component.html',
   styleUrls: ['./spedizioni.component.css']
 })
-export class SpedizioniComponent {
+export class SpedizioniComponent implements OnInit{
   spedizioni:Spedizione[]=[];
   magazzino:Magazzino[]=[];
   fornitore:Fornitore[]=[];
   filiale:Filiale[]=[];
   fornitoriProdotto:string[]=[];
   v:string="";
+
+  prod!:string;
+  forn!:string;
+  fil!:string;
+  qta!:number;
 
   displayedColumns:string[] = ['prodotto','fornitore','filiale','qta'];
   dataSource:MatTableDataSource<Spedizione> = new MatTableDataSource();
@@ -42,15 +47,35 @@ export class SpedizioniComponent {
     this.d.getFiliali().subscribe((fi)=>{
       this.filiale=fi
     })
+
+
   }
-  
+  ngOnInit(): void {
+    console.log(this.prod);
+    this.onSubmit();
+  }
+
   prodottoSelezionato(event:MatSelectChange){
     this.v=event.value;
+    let uniqueArray = [];
+    let map = new Map();
     for(let i=0; i<this.magazzino.length; i++){
-      if(this.magazzino[i].id_prodotto==this.v){
-        this.fornitoriProdotto.push(this.magazzino[i].id_fornitore);
-      }
+        if(this.magazzino[i].id_prodotto==this.v){
+          if (!map.has(this.magazzino[i].id_fornitore)) {
+            map.set(this.magazzino[i].id_fornitore, true);
+            uniqueArray.push(this.magazzino[i].id_fornitore);
+          }
+        }
     }
+    this.fornitoriProdotto = uniqueArray;
+  }
+
+
+  onSubmit(){
+
+    this.d.addSpedizione(this.prod,this.forn,this.fil,this.qta).subscribe(res => {
+      console.log(res);
+    });
   }
 
   applyFilter(event: Event) {
