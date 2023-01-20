@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Filiale } from 'src/app/Filiale';
 import { DatabaseService } from 'src/app/service/database.service';
 
+
 @Component({
   selector: 'app-incassi',
   templateUrl: './incassi.component.html',

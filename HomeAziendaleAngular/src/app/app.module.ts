@@ -33,6 +33,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { CdkTableModule } from '@angular/cdk/table';
 
 
 
@@ -76,6 +78,8 @@ import {MatSortModule} from '@angular/material/sort';
     MatPaginatorModule,
     MatSortModule,
     MatInputModule,
+    ScrollingModule,
+    CdkTableModule,
     
 
   ],
