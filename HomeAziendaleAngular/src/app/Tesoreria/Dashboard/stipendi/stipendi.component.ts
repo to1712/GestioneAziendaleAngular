@@ -11,7 +11,7 @@ import { MatTableDataSource } from '@angular/material/table';
   templateUrl: './stipendi.component.html',
   styleUrls: ['./stipendi.component.css']
 })
-export class StipendiComponent implements OnInit,AfterViewInit {
+export class StipendiComponent {
   utenti:Utente[]=[];
   displayedColumns: string[] = ['nome', 'cognome','stipendio'];
   dataSource: MatTableDataSource<Utente>=new MatTableDataSource();
@@ -27,7 +27,7 @@ export class StipendiComponent implements OnInit,AfterViewInit {
     })
 
   }
-  ngAfterViewInit(): void {}
+  
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -35,11 +35,6 @@ export class StipendiComponent implements OnInit,AfterViewInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
-  }
-
-  ngOnInit(): void {
-   // var obs: Observable<Utente[]> = this.s.getUtenti();
-   // obs.subscribe(ut => {this.utenti = ut});
   }
 
 
