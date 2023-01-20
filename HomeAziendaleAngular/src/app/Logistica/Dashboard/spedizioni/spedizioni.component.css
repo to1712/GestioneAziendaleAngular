@@ -4,7 +4,27 @@
 }
 .container mat-form-field + mat-form-field {
     margin-left: 2px;
-  }
+}
 .spedizioni{
   margin: auto;
+  width: 50%;
+}
+table {
+  width: 100%;
+}
+.tabella{
+  margin: auto;
+  margin-bottom:5%;
+}
+.mat-elevation-z8{
+overflow-x:auto;
+width: 100%;
+}
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
 }

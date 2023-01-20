@@ -5,6 +5,7 @@ import { Utente } from '../Utente';
 import { Fornitore } from '../Fornitore';
 import { Filiale } from '../Filiale';
 import { Magazzino } from '../Magazzino';
+import { Spedizione } from '../Spedizione';
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +35,10 @@ export class DatabaseService {
   getMagazzino():Observable<Magazzino[]>{
     var magazzino:Observable<Magazzino[]> = this.http.post<Magazzino[]>(this.url + "/getMagazzino",{});
     return magazzino;
+  }
+  getSpedizioni():Observable<Spedizione[]>{
+    var spedizioni:Observable<Spedizione[]> = this.http.post<Spedizione[]>(this.url + "/getSpedizioni",{});
+    return spedizioni;
   }
 
 
