@@ -40,6 +40,10 @@ export class DatabaseService {
     var spedizioni:Observable<Spedizione[]> = this.http.post<Spedizione[]>(this.url + "/getSpedizioni",{});
     return spedizioni;
   }
+  addSpedizione(sp:Spedizione):Observable<Spedizione[]>{
+    var spedizioni:Observable<Spedizione[]> = this.http.post<Spedizione[]>(this.url + "/addSpedizione",sp);
+    return spedizioni;
+  }
 
 
 }

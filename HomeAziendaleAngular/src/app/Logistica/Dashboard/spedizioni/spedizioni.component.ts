@@ -1,7 +1,11 @@
-import { Component, ViewChild } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSelectChange } from '@angular/material/select';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Filiale } from 'src/app/Filiale';
+import { Fornitore } from 'src/app/Fornitore';
+import { Magazzino } from 'src/app/Magazzino';
 import { DatabaseService } from 'src/app/service/database.service';
 import { Spedizione } from 'src/app/Spedizione';
 
@@ -12,6 +16,12 @@ import { Spedizione } from 'src/app/Spedizione';
 })
 export class SpedizioniComponent {
   spedizioni:Spedizione[]=[];
+  magazzino:Magazzino[]=[];
+  fornitore:Fornitore[]=[];
+  filiale:Filiale[]=[];
+  fornitoriProdotto:string[]=[];
+  v:string="";
+
   displayedColumns:string[] = ['prodotto','fornitore','filiale','qta'];
   dataSource:MatTableDataSource<Spedizione> = new MatTableDataSource();
   @ViewChild(MatPaginator) paginator!:MatPaginator;
@@ -23,6 +33,24 @@ export class SpedizioniComponent {
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     })
+    this.d.getMagazzino().subscribe((ma)=>{
+      this.magazzino=ma
+    })
+    this.d.getFornitori().subscribe((fo)=>{
+      this.fornitore=fo
+    })
+    this.d.getFiliali().subscribe((fi)=>{
+      this.filiale=fi
+    })
+  }
+  
+  prodottoSelezionato(event:MatSelectChange){
+    this.v=event.value;
+    for(let i=0; i<this.magazzino.length; i++){
+      if(this.magazzino[i].id_prodotto==this.v){
+        this.fornitoriProdotto.push(this.magazzino[i].id_fornitore);
+      }
+    }
   }
 
   applyFilter(event: Event) {

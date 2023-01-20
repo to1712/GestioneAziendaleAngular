@@ -3,22 +3,22 @@
 <div class="spedizioni">
     <mat-form-field appearance="fill">
         <mat-label>Prodotto</mat-label>
-        <mat-select>
-          <mat-option value="option">Option</mat-option>
+        <mat-select (selectionChange)="prodottoSelezionato($event)">
+          <mat-option *ngFor="let pro of magazzino" [value]="pro.id_prodotto" >{{pro.id_prodotto}}</mat-option>
         </mat-select>
        
       </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Fornitore</mat-label>
       <mat-select>
-        <mat-option value="option">Option</mat-option>
+        <mat-option *ngFor="let f of fornitoriProdotto" [value]="f">{{f}}</mat-option>
       </mat-select>
      
     </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>Filiale</mat-label>
         <mat-select>
-          <mat-option value="option">Option</mat-option>
+          <mat-option *ngFor="let f of filiale" [value]="f">{{f.id}}</mat-option>
         </mat-select>
       
       </mat-form-field>
@@ -27,7 +27,9 @@
         <input matInput #input  placeholder="Quantità">
         
       </mat-form-field>
+      <button id="bottone">Spedisci</button>
    </div>
+   
    <div class="tabella">
     <mat-form-field>
         <mat-label>Filtro</mat-label>
