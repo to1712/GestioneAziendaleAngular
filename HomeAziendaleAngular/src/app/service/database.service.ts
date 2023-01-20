@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Utente } from '../Utente';
 import { Fornitore } from '../Fornitore';
 import { Filiale } from '../Filiale';
+import { Magazzino } from '../Magazzino';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,11 @@ export class DatabaseService {
   getFiliali():Observable<Filiale[]>{
     var filiali:Observable<Filiale[]> = this.http.post<Filiale[]>(this.url + "/getFiliali",{});
     return filiali;
+  }
+
+  getMagazzino():Observable<Magazzino[]>{
+    var magazzino:Observable<Magazzino[]> = this.http.post<Magazzino[]>(this.url + "/getMagazzino",{});
+    return magazzino;
   }
 
 
