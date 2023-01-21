@@ -72,10 +72,7 @@ export class SpedizioniComponent implements OnInit{
 
 
   onSubmit(){
-
-    this.d.addSpedizione(this.prod,this.forn,this.fil,this.qta).subscribe(res => {
-      console.log(res);
-    });
+    this.d.addSpedizione("ciao");
   }
 
   applyFilter(event: Event) {

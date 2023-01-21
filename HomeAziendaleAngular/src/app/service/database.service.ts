@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Utente } from '../Utente';
@@ -14,6 +14,7 @@ export class DatabaseService {
   constructor(private http:HttpClient) {}
 
   private url : string = "http://localhost:8080";
+  
   s:string | null="";
 
   getUtenti():Observable<Utente[]>{
@@ -40,17 +41,13 @@ export class DatabaseService {
     var spedizioni:Observable<Spedizione[]> = this.http.post<Spedizione[]>(this.url + "/getSpedizioni",{});
     return spedizioni;
   }
-  addSpedizione(prodotto:string,fornitore:string,filiale:string,qta:number):Observable<any>{
-    let dati = {
-      prodotto: prodotto,
-      fornitore: fornitore,
-      filiale: filiale,
-      qta: qta
-    };
-    return this.http.post<any>(this.url + "/addSpedizione",dati);
-
-
+  addSpedizione(prodotto:string,){
+    console.log(prodotto);
+    //let params = new HttpParams().set("prodotto", prodotto);
+    this.http.post<String>(this.url + "/addSpedizione", prodotto).subscribe(res => {
+  });
   }
-
-
 }
+
+
+
