@@ -8,18 +8,22 @@
   <div class="container"></div>
   <div class="aggiungi">
       <mat-form-field  appearance="fill">
-          <mat-label>Prodotto</mat-label>
-          <input matInput  #input  placeholder="Inserisci prodotto">
+        <mat-label>Prodotto</mat-label>
+        <mat-select [(ngModel)]="prod" (selectionChange)="prodottoSelezionato($event)">
+          <mat-option *ngFor="let pro of prodotti" [value]="pro.id" >{{pro.id}}</mat-option>
+        </mat-select>
       </mat-form-field>
       <mat-form-field  appearance="fill">
         <mat-label>Fornitore</mat-label>
-        <input matInput  #input  placeholder="Inserisci fornitore">
+        <mat-select [(ngModel)]="forn">
+          <mat-option *ngFor="let forn of fornitoriProdotto" [value]="forn" >{{forn}}</mat-option>
+        </mat-select>
       </mat-form-field>
       <mat-form-field  appearance="fill">
           <mat-label>Inserisci quantità</mat-label>
-          <input matInput  #input  placeholder="inserisci quantità">
+          <input [(ngModel)]="qta" matInput  #input  placeholder="inserisci quantità">
       </mat-form-field>
-      <button id="bottone">AGGIUNGI PRODOTTO</button>
+      <button (click)="onSubmit()" id="bottone">AGGIUNGI PRODOTTO</button>
     </div>
   <div>
   </div>

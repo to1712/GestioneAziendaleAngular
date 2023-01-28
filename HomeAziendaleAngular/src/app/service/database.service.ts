@@ -6,6 +6,7 @@ import { Fornitore } from '../Fornitore';
 import { Filiale } from '../Filiale';
 import { Magazzino } from '../Magazzino';
 import { Spedizione } from '../Spedizione';
+import { Prodotto } from '../Prodotto';
 
 @Injectable({
   providedIn: 'root'
@@ -41,10 +42,18 @@ export class DatabaseService {
     var spedizioni:Observable<Spedizione[]> = this.http.post<Spedizione[]>(this.url + "/getSpedizioni",{});
     return spedizioni;
   }
+  getProdotti():Observable<Prodotto[]>{
+    var prodotti:Observable<Prodotto[]> = this.http.post<Prodotto[]>(this.url + "/getProdotti",{});
+    return prodotti;
+  }
+
+  addProdotto(id_prodotto:string,id_fornitore:string,qta:number){
+    this.http.post<any>(this.url + "/addProdotto", {id_prodotto,id_fornitore,qta}).subscribe(res => {
+  });
+  }
+
   addSpedizione(prodotto:string,fornitore:string,filiale:string,qta:number){
     console.log(prodotto);
-
-    //let params = new HttpParams().set("prodotto", prodotto);
     this.http.post<any>(this.url + "/addSpedizione", {prodotto,fornitore,filiale,qta}).subscribe(res => {
   });
   }
