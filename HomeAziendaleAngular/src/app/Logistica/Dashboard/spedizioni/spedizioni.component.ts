@@ -14,7 +14,7 @@ import { Spedizione } from 'src/app/Spedizione';
   templateUrl: './spedizioni.component.html',
   styleUrls: ['./spedizioni.component.css']
 })
-export class SpedizioniComponent implements OnInit{
+export class SpedizioniComponent implements OnInit {
   spedizioni:Spedizione[]=[];
   magazzino:Magazzino[]=[];
   fornitore:Fornitore[]=[];
@@ -50,8 +50,9 @@ export class SpedizioniComponent implements OnInit{
 
 
   }
+
   ngOnInit(): void {
-    console.log(this.prod);
+
     this.onSubmit();
   }
 
@@ -72,7 +73,11 @@ export class SpedizioniComponent implements OnInit{
 
 
   onSubmit(){
-    this.d.addSpedizione("ciao");
+    console.log("PRODOTTO: " + this.prod);
+    console.log("FORNITORE: " + this.forn);
+    console.log("FILIALE: " + this.fil);
+    console.log("QUANTITA': " + this.qta);
+    this.d.addSpedizione(this.prod,this.forn,this.fil,this.qta);
   }
 
   applyFilter(event: Event) {

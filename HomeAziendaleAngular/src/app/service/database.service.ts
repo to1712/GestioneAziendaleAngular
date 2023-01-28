@@ -14,7 +14,7 @@ export class DatabaseService {
   constructor(private http:HttpClient) {}
 
   private url : string = "http://localhost:8080";
-  
+
   s:string | null="";
 
   getUtenti():Observable<Utente[]>{
@@ -41,10 +41,11 @@ export class DatabaseService {
     var spedizioni:Observable<Spedizione[]> = this.http.post<Spedizione[]>(this.url + "/getSpedizioni",{});
     return spedizioni;
   }
-  addSpedizione(prodotto:string,){
+  addSpedizione(prodotto:string,fornitore:string,filiale:string,qta:number){
     console.log(prodotto);
+
     //let params = new HttpParams().set("prodotto", prodotto);
-    this.http.post<String>(this.url + "/addSpedizione", prodotto).subscribe(res => {
+    this.http.post<any>(this.url + "/addSpedizione", {prodotto,fornitore,filiale,qta}).subscribe(res => {
   });
   }
 }
