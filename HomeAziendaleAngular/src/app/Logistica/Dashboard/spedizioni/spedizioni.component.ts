@@ -14,7 +14,7 @@ import { Spedizione } from 'src/app/Spedizione';
   templateUrl: './spedizioni.component.html',
   styleUrls: ['./spedizioni.component.css']
 })
-export class SpedizioniComponent implements OnInit {
+export class SpedizioniComponent {
   spedizioni:Spedizione[]=[];
   magazzino:Magazzino[]=[];
   fornitore:Fornitore[]=[];
@@ -51,10 +51,7 @@ export class SpedizioniComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
 
-    this.onSubmit();
-  }
 
   prodottoSelezionato(event:MatSelectChange){
     this.v=event.value;

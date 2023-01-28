@@ -12,7 +12,7 @@ import { DatabaseService } from 'src/app/service/database.service';
   templateUrl: './magazzino.component.html',
   styleUrls: ['./magazzino.component.css']
 })
-export class MagazzinoComponent implements OnInit{
+export class MagazzinoComponent {
   magazzino:Magazzino[]=[];
   prodotti:Prodotto[]=[];
   v:string="";
@@ -38,9 +38,7 @@ export class MagazzinoComponent implements OnInit{
 
 
   }
-  ngOnInit(): void {
-    this.onSubmit();
-  }
+
   prodottoSelezionato(event:MatSelectChange){
     this.v=event.value;
     let uniqueArray = [];
@@ -54,7 +52,7 @@ export class MagazzinoComponent implements OnInit{
         }
     }
     this.fornitoriProdotto = uniqueArray;
-  
+
   }
 
   onSubmit(){
