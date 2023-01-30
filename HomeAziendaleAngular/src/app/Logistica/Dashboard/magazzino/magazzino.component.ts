@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, NgZone, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSelectChange } from '@angular/material/select';
 import { MatSort } from '@angular/material/sort';
@@ -26,7 +26,7 @@ export class MagazzinoComponent {
   forn!:string;
   qta!:number;
 
-  constructor(private d:DatabaseService){
+  constructor(private d:DatabaseService,private ngZone: NgZone){
     this.d.getMagazzino().subscribe((ma)=>{this.magazzino=ma
       this.dataSource = new MatTableDataSource(this.magazzino)
       this.dataSource.paginator = this.paginator;
@@ -38,6 +38,7 @@ export class MagazzinoComponent {
 
 
   }
+  
 
   prodottoSelezionato(event:MatSelectChange){
     this.v=event.value;
@@ -60,6 +61,14 @@ export class MagazzinoComponent {
     console.log("FORNITORE: " + this.forn);
     console.log("QUANTITA': " + this.qta);
     this.d.addProdotto(this.prod,this.forn,this.qta);
+    setTimeout(()=>{
+    this.d.updateMagazzino().subscribe((ma)=>{this.magazzino=ma
+      this.dataSource = new MatTableDataSource(this.magazzino)
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    })
+  },500);
+   
   }
 
 

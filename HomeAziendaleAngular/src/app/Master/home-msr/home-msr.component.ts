@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class HomeMSRComponent {
   visualizza:string="";
   riceviComponent(value: string){
+    console.log(value);
     this.visualizza=value;
   }
+ 
 }

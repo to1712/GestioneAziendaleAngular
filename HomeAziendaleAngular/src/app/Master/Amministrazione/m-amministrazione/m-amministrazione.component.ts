@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-barra-master',
-  templateUrl: './barra-master.component.html',
-  styleUrls: ['./barra-master.component.css']
+  selector: 'app-m-amministrazione',
+  templateUrl: './m-amministrazione.component.html',
+  styleUrls: ['./m-amministrazione.component.css']
 })
-export class BarraMasterComponent {
+export class MAmministrazioneComponent {
   @Output() event=new EventEmitter<string>();
   visualizza:string="";
   constructor(){}

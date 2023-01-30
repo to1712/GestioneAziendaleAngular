@@ -57,6 +57,22 @@ export class DatabaseService {
     this.http.post<any>(this.url + "/addSpedizione", {prodotto,fornitore,filiale,qta}).subscribe(res => {
   });
   }
+  addDipendente(nome:string,cognome:string,email:string,password:string,ruolo:string,sede:string){
+    this.http.post<string>(this.url + "/addDipendente", {nome,cognome,email,password,ruolo,sede}).subscribe(res => {
+    });
+  }
+  deleteDipendente(email:string){
+    this.http.post<string>(this.url + "/deleteDipendente", email).subscribe(res => {
+    });
+  }
+  updateTable():Observable<Utente[]>{
+    var utenti:Observable<Utente[]>=this.http.post<Utente[]>(this.url + "/updateUtente",{});
+    return utenti;
+  }
+  updateMagazzino():Observable<Magazzino[]>{
+    var magazzino:Observable<Magazzino[]> = this.http.post<Magazzino[]>(this.url + "/updateMagazzino",{});
+    return magazzino;
+  }
 }
 
 

@@ -1,4 +1,4 @@
-
+<div id="home" class="sb-nav-fixed">
             <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
                 <!-- Navbar Brand-->
                 <a class="navbar-brand ps-3" routerLink="/mns">TechnoVision</a>
@@ -40,25 +40,98 @@
 
             </nav>
             <div id="layoutSidenav">
-                <div id="layoutSidenav_nav">
-                    <app-barra-master></app-barra-master>
-                </div>
-                <div id="layoutSidenav_content">
-                  <div id="layoutSidenav_content">
-                    <div id="layoutSidenav_content" >
-                      <ng-template [ngTemplateOutlet]="home"></ng-template></div>
+              <div id="layoutSidenav_nav" >
+                <app-barra-master (event)="riceviComponent($event)"></app-barra-master>
+            </div>
+            <div id="layoutSidenav_content">
+            <main>
+            <div [ngSwitch]=visualizza>
+              <ng-template *ngSwitchCase="''" [ngTemplateOutlet]="home"></ng-template>
+              <ng-template *ngSwitchCase="'lgs'" [ngTemplateOutlet]="logistica"></ng-template>
+              <ng-template *ngSwitchCase="'mns'" [ngTemplateOutlet]="amministrazione"></ng-template>
+              <ng-template *ngSwitchCase="'tsr'" [ngTemplateOutlet]="tesoreria"></ng-template>
+              <ng-template *ngSwitchCase="'aSpese'" [ngTemplateOutlet]="aSpese"></ng-template>
+              <ng-template *ngSwitchCase="'aIncassi'" [ngTemplateOutlet]="aIncassi"></ng-template>
+              <ng-template *ngSwitchCase="'aSA'" [ngTemplateOutlet]="aSA"></ng-template>
+              <ng-template *ngSwitchCase="'aSL'" [ngTemplateOutlet]="aSL"></ng-template>
+              <ng-template *ngSwitchCase="'aST'" [ngTemplateOutlet]="aST"></ng-template>
+              <ng-template *ngSwitchCase="'lFornitori'" [ngTemplateOutlet]="lF"></ng-template>
+              <ng-template *ngSwitchCase="'lMagazzino'" [ngTemplateOutlet]="lM"></ng-template>
+              <ng-template *ngSwitchCase="'lSpedizioni'" [ngTemplateOutlet]="lS"></ng-template>
+              <ng-template *ngSwitchCase="'tBilanci'" [ngTemplateOutlet]="tB"></ng-template>
+              <ng-template *ngSwitchCase="'tStipendi'" [ngTemplateOutlet]="tS"></ng-template>
+              <ng-template *ngSwitchCase="'dipendenti'" [ngTemplateOutlet]="D"></ng-template>
+            </div>
+                  <ng-template #home>
+                    <div class="container-fluid px-4">
+                      <h1 class="mt-4">Home</h1>
+                      <ol class="breadcrumb mb-4">
+                          <li class="breadcrumb-item active">Home</li>
+                      </ol>
+                    </div>
+                  </ng-template>
+                  <ng-template #profilo>
+                    <app-profilo></app-profilo>
+                  </ng-template>
+                  <ng-template #D>
+                    <app-dipendenti></app-dipendenti>
+                  </ng-template>
+                  <!--Logistica-->
+                  <ng-template #logistica>
+                    <app-m-logistica (event)="riceviComponent($event)"></app-m-logistica>
+                  </ng-template>
+                  <ng-template #lF>
+                    <app-fornitori></app-fornitori>
+                    <button (click)="visualizza='lgs'">INDIETRO</button>
+                  </ng-template>
+                  <ng-template #lM>
+                    <app-magazzino></app-magazzino>
+                    <button (click)="visualizza='lgs'">INDIETRO</button>
+                  </ng-template>
+                  <ng-template #lS>
+                    <app-spedizioni></app-spedizioni>
+                    <button (click)="visualizza='lgs'">INDIETRO</button>
+                  </ng-template>
 
-                          <ng-template #home>
-                            <div class="container-fluid px-4">
-                              <h1 class="mt-4">Home</h1>
-                              <ol class="breadcrumb mb-4">
-                                  <li class="breadcrumb-item active">Home</li>
-                              </ol>
-                            </div>
-                          </ng-template>
-                          <ng-template #profilo>
-                            <app-profilo></app-profilo>
-                          </ng-template>
+                   <!--Tesoreria-->
+                  <ng-template #tesoreria>
+                    <app-m-tesoreria (event)="riceviComponent($event)" ></app-m-tesoreria>
+                  </ng-template>
+                  <ng-template #tB>
+                    <app-bilancio></app-bilancio>
+                    <button (click)="visualizza='tsr'">INDIETRO</button>
+                  </ng-template>
+                  <ng-template #tS>
+                    <app-stipendi></app-stipendi>
+                    <button (click)="visualizza='tsr'">INDIETRO</button>
+                  </ng-template>
+
+
+                  <!--Amministrazione-->
+                  <ng-template #amministrazione>
+                    <app-m-amministrazione (event)="riceviComponent($event)"></app-m-amministrazione>
+                  </ng-template>
+                  <ng-template #aSpese>
+                    <app-spese></app-spese>
+                    <button (click)="visualizza='mns'">INDIETRO</button>
+                  </ng-template>
+                  <ng-template #aIncassi>
+                    <app-incassi></app-incassi>
+                    <button (click)="visualizza='mns'">INDIETRO</button>
+                  </ng-template>
+                  <ng-template #aSA>
+                    <app-samministrazione></app-samministrazione>
+                    <button (click)="visualizza='mns'">INDIETRO</button>
+                  </ng-template>
+                  <ng-template #aST>
+                    <app-stesoreria></app-stesoreria>
+                    <button (click)="visualizza='mns'">INDIETRO</button>
+                  </ng-template>
+                  <ng-template #aSL>
+                    <app-slogistica></app-slogistica>
+                    <button (click)="visualizza='mns'">INDIETRO</button>
+                  </ng-template>
+                </main>
                     <footer class="py-4 bg-light mt-auto">
                         <div class="container-fluid px-4">
                             <div class="d-flex align-items-center justify-content-between small">
@@ -73,6 +146,7 @@
                     </footer>
                 </div>
             </div>
+</div>
 
 
 

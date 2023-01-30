@@ -38,6 +38,10 @@ import { CdkTableModule } from '@angular/cdk/table';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
+import { MTesoreriaComponent } from './Master/Tesoreria/m-tesoreria/m-tesoreria.component';
+import { MLogisticaComponent } from './Master/Logistica/m-logistica/m-logistica.component';
+import { MAmministrazioneComponent } from './Master/Amministrazione/m-amministrazione/m-amministrazione.component';
+import { DipendentiComponent } from './Master/Dipendenti/dipendenti/dipendenti.component';
 
 
 @NgModule({
@@ -61,7 +65,11 @@ import { FormsModule } from '@angular/forms';
     MagazzinoComponent,
     SpedizioniComponent,
     StipendiComponent,
-    BilancioComponent
+    BilancioComponent,
+    MTesoreriaComponent,
+    MLogisticaComponent,
+    MAmministrazioneComponent,
+    DipendentiComponent
 
   ],
   imports: [

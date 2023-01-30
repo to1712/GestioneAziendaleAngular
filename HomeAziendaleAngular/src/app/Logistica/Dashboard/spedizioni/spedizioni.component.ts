@@ -70,11 +70,27 @@ export class SpedizioniComponent {
 
 
   onSubmit(){
+    for(let i=0; i<this.magazzino.length; i++){
+      if(this.magazzino[i].id_prodotto==this.prod){
+        if(this.qta>this.magazzino[i].qta){
+          alert("La quatità non è disponibile in magazzino");
+          return;
+        }
+      }
+    }
+   
     console.log("PRODOTTO: " + this.prod);
     console.log("FORNITORE: " + this.forn);
     console.log("FILIALE: " + this.fil);
     console.log("QUANTITA': " + this.qta);
     this.d.addSpedizione(this.prod,this.forn,this.fil,this.qta);
+    setTimeout(()=>{
+    this.d.getSpedizioni().subscribe((sp)=>{this.spedizioni=sp
+      this.dataSource = new MatTableDataSource(this.spedizioni)
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    })
+  },500);
   }
 
   applyFilter(event: Event) {
