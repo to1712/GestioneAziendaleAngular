@@ -13,7 +13,7 @@
       <mat-option *ngFor="let f of filiali" [value]="f" >{{f.id}}</mat-option>
     </mat-select>
   </mat-form-field>
-  <button id="bottone" (click)="calcolaBilancio()">CALCOLA</button>
+  <button id="bottone" mat-raised-button class="color" (click)="calcolaBilancio()">CALCOLA</button>
 </div>
   <div class="container"></div>
   <div class="tabella">

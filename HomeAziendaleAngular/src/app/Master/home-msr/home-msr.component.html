@@ -9,19 +9,11 @@
                   <input class="form-control" type="text" placeholder="Cerca" aria-label="Search for..." aria-describedby="btnNavbarSearch" />
                   <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
                 </div>-->
-                <form class="d-none d-md-inline-block ms-auto me-0 me-md-3 my-2 my-md-0">
-
-                  <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Cerca" aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-                    </div>
-
-                </form>
+                <form class="d-none d-md-inline-block ms-auto me-0 me-md-3 my-2 my-md-0"></form>
 
                   <a class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                     <a mat-button [matMenuTriggerFor]="menu" class="nav-link dropdown-toggle" role="button"><mat-icon>person</mat-icon></a>
                     <mat-menu #menu="matMenu" class="matMenu">
-                    <button mat-menu-item >Profilo</button>
                     <a mat-menu-item  href="http://localhost:8080/views/doLogout">Logout</a>
                   </mat-menu>
                 </a>
@@ -82,15 +74,33 @@
                   </ng-template>
                   <ng-template #lF>
                     <app-fornitori></app-fornitori>
-                    <button (click)="visualizza='lgs'">INDIETRO</button>
+                    <button mat-raised-button style=" background-color: #343a40;
+                    color:white;
+                    margin: 30px 0;
+                    margin-left: 10px;
+                    font-size: 18px;
+                    width: 10%;
+                    height: 100%;" (click)="visualizza='lgs'">INDIETRO</button>
                   </ng-template>
                   <ng-template #lM>
                     <app-magazzino></app-magazzino>
-                    <button (click)="visualizza='lgs'">INDIETRO</button>
+                    <button mat-raised-button style=" background-color: #343a40;
+                    color:white;
+                    margin: 30px 0;
+                    margin-left: 10px;
+                    font-size: 18px;
+                    width: 10%;
+                    height: 100%;" (click)="visualizza='lgs'">INDIETRO</button>
                   </ng-template>
                   <ng-template #lS>
                     <app-spedizioni></app-spedizioni>
-                    <button (click)="visualizza='lgs'">INDIETRO</button>
+                    <button mat-raised-button style=" background-color: #343a40;
+                    color:white;
+                    margin: 30px 0;
+                    margin-left: 10px;
+                    font-size: 18px;
+                    width: 10%;
+                    height: 100%;" (click)="visualizza='lgs'">INDIETRO</button>
                   </ng-template>
 
                    <!--Tesoreria-->
@@ -99,11 +109,23 @@
                   </ng-template>
                   <ng-template #tB>
                     <app-bilancio></app-bilancio>
-                    <button (click)="visualizza='tsr'">INDIETRO</button>
+                    <button mat-raised-button style=" background-color: #343a40;
+                    color:white;
+                    margin: 30px 0;
+                    margin-left: 10px;
+                    font-size: 18px;
+                    width: 10%;
+                    height: 100%;" (click)="visualizza='tsr'">INDIETRO</button>
                   </ng-template>
                   <ng-template #tS>
                     <app-stipendi></app-stipendi>
-                    <button (click)="visualizza='tsr'">INDIETRO</button>
+                    <button mat-raised-button style=" background-color: #343a40;
+                    color:white;
+                    margin: 30px 0;
+                    margin-left: 10px;
+                    font-size: 18px;
+                    width: 10%;
+                    height: 100%;" (click)="visualizza='tsr'">INDIETRO</button>
                   </ng-template>
 
 
@@ -113,23 +135,53 @@
                   </ng-template>
                   <ng-template #aSpese>
                     <app-spese></app-spese>
-                    <button (click)="visualizza='mns'">INDIETRO</button>
+                    <button mat-raised-button style=" background-color: #343a40;
+                    color:white;
+                    margin: 30px 0;
+                    margin-left: 10px;
+                    font-size: 18px;
+                    width: 10%;
+                    height: 100%;" (click)="visualizza='mns'">INDIETRO</button>
                   </ng-template>
                   <ng-template #aIncassi>
                     <app-incassi></app-incassi>
-                    <button (click)="visualizza='mns'">INDIETRO</button>
+                    <button mat-raised-button style=" background-color: #343a40;
+                    color:white;
+                    margin: 30px 0;
+                    margin-left: 10px;
+                    font-size: 18px;
+                    width: 10%;
+                    height: 100%;" (click)="visualizza='mns'">INDIETRO</button>
                   </ng-template>
                   <ng-template #aSA>
                     <app-samministrazione></app-samministrazione>
-                    <button (click)="visualizza='mns'">INDIETRO</button>
+                    <button mat-raised-button style=" background-color: #343a40;
+                    color:white;
+                    margin: 30px 0;
+                    margin-left: 10px;
+                    font-size: 18px;
+                    width: 10%;
+                    height: 100%;" (click)="visualizza='mns'">INDIETRO</button>
                   </ng-template>
                   <ng-template #aST>
                     <app-stesoreria></app-stesoreria>
-                    <button (click)="visualizza='mns'">INDIETRO</button>
+                    <button mat-raised-button style=" background-color: #343a40;
+                    color:white;
+                    margin: 30px 0;
+                    margin-left: 10px;
+                    font-size: 18px;
+                    width: 10%;
+                    height: 100%;" (click)="visualizza='mns'">INDIETRO</button>
                   </ng-template>
                   <ng-template #aSL>
                     <app-slogistica></app-slogistica>
-                    <button (click)="visualizza='mns'">INDIETRO</button>
+                    <button mat-raised-button style=" background-color: #343a40;
+                    color:white;
+                    margin: 30px 0;
+                    margin-left: 10px;
+                    font-size: 18px;
+                    width: 10%;
+                    height: 100%;" (click)="visualizza='mns'">INDIETRO</button>
                   </ng-template>
                 </main>
                     <footer class="py-4 bg-light mt-auto">

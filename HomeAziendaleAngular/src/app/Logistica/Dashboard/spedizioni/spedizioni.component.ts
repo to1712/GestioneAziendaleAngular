@@ -9,25 +9,30 @@ import { Magazzino } from 'src/app/Magazzino';
 import { DatabaseService } from 'src/app/service/database.service';
 import { Spedizione } from 'src/app/Spedizione';
 
+
+
 @Component({
   selector: 'app-spedizioni',
   templateUrl: './spedizioni.component.html',
   styleUrls: ['./spedizioni.component.css']
 })
-export class SpedizioniComponent {
+export class SpedizioniComponent{
   spedizioni:Spedizione[]=[];
   magazzino:Magazzino[]=[];
   fornitore:Fornitore[]=[];
   filiale:Filiale[]=[];
   fornitoriProdotto:string[]=[];
   v:string="";
-
+  
+  
   prod!:string;
   forn!:string;
   fil!:string;
   qta!:any;
 
-  displayedColumns:string[] = ['prodotto','fornitore','filiale','qta'];
+  currentDate!: string;
+
+  displayedColumns:string[] = ['prodotto','fornitore','filiale','qta','data'];
   dataSource:MatTableDataSource<Spedizione> = new MatTableDataSource();
   @ViewChild(MatPaginator) paginator!:MatPaginator;
   @ViewChild(MatSort) sort!:MatSort;
@@ -47,10 +52,10 @@ export class SpedizioniComponent {
     this.d.getFiliali().subscribe((fi)=>{
       this.filiale=fi
     })
-
-
+    
   }
-
+  
+ 
 
 
   prodottoSelezionato(event:MatSelectChange){
@@ -106,4 +111,8 @@ export class SpedizioniComponent {
       this.dataSource.paginator.firstPage();
     }
   }
+  
+
+  
 }
+

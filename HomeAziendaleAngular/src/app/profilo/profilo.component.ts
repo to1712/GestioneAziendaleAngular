@@ -12,6 +12,9 @@ import { Utente } from '../Utente';
 export class ProfiloComponent implements OnInit{
   @Input()utente?:Utente;
   @Input()sessionId:string|null="";
+  numero:string="-";
+  modificabile:boolean=false;
+
   constructor(private route: ActivatedRoute,private service: ServiceService){}
   ngOnInit(): void {
     var sessionId = this.route.queryParams.subscribe(
@@ -26,6 +29,12 @@ export class ProfiloComponent implements OnInit{
       } );
       
       
+  }
+  salvaNumero(){
+    this.modificabile=false;
+  }
+  cambiaNumero(){
+    this.modificabile=true;
   }
   
 }

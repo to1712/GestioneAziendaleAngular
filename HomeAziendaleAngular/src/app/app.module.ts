@@ -34,7 +34,6 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import { ScrollingModule } from '@angular/cdk/scrolling';
-import { CdkTableModule } from '@angular/cdk/table';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
@@ -42,7 +41,7 @@ import { MTesoreriaComponent } from './Master/Tesoreria/m-tesoreria/m-tesoreria.
 import { MLogisticaComponent } from './Master/Logistica/m-logistica/m-logistica.component';
 import { MAmministrazioneComponent } from './Master/Amministrazione/m-amministrazione/m-amministrazione.component';
 import { DipendentiComponent } from './Master/Dipendenti/dipendenti/dipendenti.component';
-
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -89,10 +88,10 @@ import { DipendentiComponent } from './Master/Dipendenti/dipendenti/dipendenti.c
     MatSortModule,
     MatInputModule,
     ScrollingModule,
-    CdkTableModule,
     MatOptionModule,
     MatSelectModule,
     FormsModule,
+    MatButtonModule,
 
   ],
   providers: [],

@@ -33,7 +33,7 @@
         <input [(ngModel)]="qta" matInput #input  placeholder="Quantità">
 
       </mat-form-field>
-      <button id="bottone" (click)="onSubmit()">Spedisci</button>
+      <button id="bottone" mat-raised-button class="color" (click)="onSubmit()">SPEDISCI</button>
    </div>
 
    <div class="tabella">
@@ -59,6 +59,10 @@
           <ng-container matColumnDef="qta">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Quantità </th>
             <td mat-cell *matCellDef="let row">{{row.qta}} </td>
+          </ng-container>
+          <ng-container matColumnDef="data">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Data </th>
+            <td mat-cell *matCellDef="let row">{{row.data}} </td>
           </ng-container>
 
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

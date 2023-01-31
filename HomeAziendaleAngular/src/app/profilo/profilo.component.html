@@ -20,13 +20,18 @@
                                   <h6>Informazioni</h6>
                                   <hr class="mt-0 mb-4">
                                   <div class="row pt-1">
-                                      <div class="col-6 mb-3">
+                                      <div id="email" class="col-6 mb-3">
                                           <h6>Email</h6>
                                           <p class="text-muted">{{utente?.email}}</p>
                                       </div>
                                       <div class="col-6 mb-3">
-                                          <h6>Telefono</h6>
-                                          <p class="text-muted">123 456 789</p>
+                                          <h6 >Telefono<button id="modificaNumero" mat-button (click)="cambiaNumero()"><mat-icon>edit</mat-icon></button></h6>
+                                          <!--<p class="text-muted">123 456 789<button>ciao</button></p>-->
+                                          <div *ngIf="modificabile; else displayOnly">
+                                            <input [(ngModel)]="numero">
+                                            <button (click)="salvaNumero()">Save</button>
+                                          </div>
+                                          <ng-template #displayOnly>{{numero}} </ng-template>
                                       </div>
                                   </div>
                                   <hr class="mt-0 mb-4">

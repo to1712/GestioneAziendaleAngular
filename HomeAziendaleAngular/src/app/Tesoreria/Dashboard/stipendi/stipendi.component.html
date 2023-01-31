@@ -12,7 +12,7 @@
       <mat-option *ngFor="let f of dipendenti" [value]="f" >{{f}}</mat-option>
     </mat-select>
   </mat-form-field>
-  <button id="bottone" (click)="calcolaStipendio()">CALCOLA</button>
+  <button id="bottone" mat-raised-button class="color" (click)="calcolaStipendio()">CALCOLA</button>
 </div>
 <div class="container"></div>
 <div class="tabella">

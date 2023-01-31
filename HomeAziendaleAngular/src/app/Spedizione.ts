@@ -3,4 +3,5 @@ export interface Spedizione{
     fornitore:string;
     filiale:string;
     qta:number;
+    data:string;
 }
