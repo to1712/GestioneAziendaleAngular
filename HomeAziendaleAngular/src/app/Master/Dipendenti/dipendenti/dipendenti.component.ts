@@ -69,7 +69,12 @@ export class DipendentiComponent implements OnChanges{
         this.dataSource.sort = this.sort;
       })
     },500);
-   
+    this.nome ="";
+    this.cognome ="";
+    this.email ="";
+    this.password ="";
+    this.ruolo ="";
+    this.sede = "";
   }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

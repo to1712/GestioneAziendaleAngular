@@ -73,6 +73,17 @@ export class DatabaseService {
     var magazzino:Observable<Magazzino[]> = this.http.post<Magazzino[]>(this.url + "/updateMagazzino",{});
     return magazzino;
   }
+
+  nuovoStipendio(stipendio:number,email:string){
+    this.http.post<any>(this.url + "/nuovoStipendio", {stipendio,email}).subscribe(res => {
+    });
+  }
+
+  addBilancio(id:string,bilancio:number){
+    console.log("DIO CANE");
+    this.http.post<any>(this.url + "/addBilancio", {id,bilancio}).subscribe(res => {
+    });
+  }
 }
 
 

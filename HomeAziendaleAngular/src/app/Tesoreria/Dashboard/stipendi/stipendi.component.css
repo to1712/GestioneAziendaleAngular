@@ -1,7 +1,6 @@
 table {
   width: 100%;
 }
-
 .mat-elevation-z8{
 overflow-x:auto;
 width: 100%;
@@ -10,7 +9,30 @@ width: 100%;
   font-size: 14px;
   width: 100%;
 }
-
 td, th {
   width: 25%;
 }
+.container{
+  justify-items: center;
+  width:100%;
+}
+.options{
+  margin: auto;
+  width: 50%;
+}
+
+#bottone{
+  display: block;
+  margin: auto;
+}
+.container mat-form-field + mat-form-field {
+    margin-left: 2px;
+}
+.tabella{
+  margin: auto;
+  margin-bottom:5%;
+  width: 70%;
+  margin-top: 5%;
+}
+
+

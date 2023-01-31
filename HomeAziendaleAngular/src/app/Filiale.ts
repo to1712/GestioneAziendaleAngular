@@ -24,7 +24,7 @@ export interface Filiale{
     spese_set:number;
     spese_ott:number;
     spese_nov:number;
-    spese_dec:number;
+    spese_dic:number;
     bilancio:number;
 
 }

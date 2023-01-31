@@ -6,6 +6,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Magazzino } from 'src/app/Magazzino';
 import { Prodotto } from 'src/app/Prodotto';
 import { DatabaseService } from 'src/app/service/database.service';
+import { MatSelect } from '@angular/material/select';
+
 
 @Component({
   selector: 'app-magazzino',
@@ -24,7 +26,7 @@ export class MagazzinoComponent {
 
   prod!:string;
   forn!:string;
-  qta!:number;
+  qta!:any;
 
   constructor(private d:DatabaseService,private ngZone: NgZone){
     this.d.getMagazzino().subscribe((ma)=>{this.magazzino=ma
@@ -38,7 +40,7 @@ export class MagazzinoComponent {
 
 
   }
-  
+
 
   prodottoSelezionato(event:MatSelectChange){
     this.v=event.value;
@@ -68,7 +70,11 @@ export class MagazzinoComponent {
       this.dataSource.sort = this.sort;
     })
   },500);
-   
+    this.prod = "";
+    this.forn = "";
+    this.qta = null;
+
+
   }
 
 

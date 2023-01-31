@@ -25,7 +25,7 @@ export class SpedizioniComponent {
   prod!:string;
   forn!:string;
   fil!:string;
-  qta!:number;
+  qta!:any;
 
   displayedColumns:string[] = ['prodotto','fornitore','filiale','qta'];
   dataSource:MatTableDataSource<Spedizione> = new MatTableDataSource();
@@ -78,7 +78,7 @@ export class SpedizioniComponent {
         }
       }
     }
-   
+
     console.log("PRODOTTO: " + this.prod);
     console.log("FORNITORE: " + this.forn);
     console.log("FILIALE: " + this.fil);
@@ -91,6 +91,11 @@ export class SpedizioniComponent {
       this.dataSource.sort = this.sort;
     })
   },500);
+
+  this.prod = "";
+  this.forn = "";
+  this.fil = "";
+  this.qta = null;
   }
 
   applyFilter(event: Event) {
