@@ -52,9 +52,9 @@ export class DatabaseService {
   });
   }
 
-  addSpedizione(prodotto:string,fornitore:string,filiale:string,qta:number){
+  addSpedizione(prodotto:string,fornitore:string,filiale:string,qta:number,data:string){
     console.log(prodotto);
-    this.http.post<any>(this.url + "/addSpedizione", {prodotto,fornitore,filiale,qta}).subscribe(res => {
+    this.http.post<any>(this.url + "/addSpedizione", {prodotto,fornitore,filiale,qta,data}).subscribe(res => {
   });
   }
   addDipendente(nome:string,cognome:string,email:string,password:string,ruolo:string,sede:string){
@@ -83,6 +83,11 @@ export class DatabaseService {
     console.log("DIO CANE");
     this.http.post<any>(this.url + "/addBilancio", {id,bilancio}).subscribe(res => {
     });
+  }
+
+  addTelefono(email:string,telefono:string){
+    this.http.post<string>(this.url + "/addTelefono", {email,telefono}).subscribe(res => {
+  });
   }
 }
 

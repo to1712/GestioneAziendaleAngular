@@ -1,8 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { observable, Observable } from 'rxjs';
 import { ServiceService } from '../service/service.service';
 import { Utente } from '../Utente';
+import { DOCUMENT } from '@angular/common';
+import { DatabaseService } from '../service/database.service';
 
 @Component({
   selector: 'app-profilo',
@@ -12,11 +14,16 @@ import { Utente } from '../Utente';
 export class ProfiloComponent implements OnInit{
   @Input()utente?:Utente;
   @Input()sessionId:string|null="";
-  numero:string="-";
+  numero:string="";
+  email:string="";
   modificabile:boolean=false;
-
-  constructor(private route: ActivatedRoute,private service: ServiceService){}
+  visualizza:string|null|undefined="";
+  telefono:string="";
+  constructor(@Inject(DOCUMENT) private document: Document,private route: ActivatedRoute,private service: ServiceService,private s: DatabaseService){
+    this.visualizza=this.document.defaultView?.sessionStorage.getItem('dato');
+  }
   ngOnInit(): void {
+    
     var sessionId = this.route.queryParams.subscribe(
         params => {
       var sessionId = this.service.getSession();
@@ -24,7 +31,10 @@ export class ProfiloComponent implements OnInit{
         console.log(sessionId);
         this.sessionId = sessionId;
         var obs: Observable<Utente> = this.service.getUtente(sessionId);
-        obs.subscribe(ut => {this.utente = ut});
+        obs.subscribe(ut => {this.utente = ut
+          console.log(this.utente.telefono);
+          this.telefono = this.utente.telefono;
+        });
       }
       } );
 
@@ -32,12 +42,23 @@ export class ProfiloComponent implements OnInit{
   }
   salvaNumero(){
     this.modificabile=false;
-    console.log(this.utente?.nome);
-    //this.s.addNumero()
+    if(this.numero.length > 10 || this.numero.length < 10)
+    {
+        alert("Il numero inserito non è valido");
+        this.numero = "";
+        return;
+    }
+    this.s.addTelefono(this.email,this.numero);
   }
   cambiaNumero(){
     this.modificabile=true;
+    this.numero = "";
   }
 
+  riceviComponent(value: string){
+    this.document.defaultView?.sessionStorage.setItem('dato', value);
+    console.log(value);
+    this.visualizza=this.document.defaultView?.sessionStorage.getItem('dato');
+  }
 
 }

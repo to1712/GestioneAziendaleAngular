@@ -88,7 +88,20 @@ export class SpedizioniComponent{
     console.log("FORNITORE: " + this.forn);
     console.log("FILIALE: " + this.fil);
     console.log("QUANTITA': " + this.qta);
-    this.d.addSpedizione(this.prod,this.forn,this.fil,this.qta);
+    const data = new Date();
+    const formattedDate = data.toLocaleDateString("it-IT", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
+    const formattedTime = data.toLocaleTimeString("it-IT", {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+    const result = `${formattedDate} ${formattedTime}`;
+
+    
+    this.d.addSpedizione(this.prod,this.forn,this.fil,this.qta,result);
     setTimeout(()=>{
     this.d.getSpedizioni().subscribe((sp)=>{this.spedizioni=sp
       this.dataSource = new MatTableDataSource(this.spedizioni)
