@@ -27,14 +27,17 @@ export class ProfiloComponent implements OnInit{
         obs.subscribe(ut => {this.utente = ut});
       }
       } );
-      
-      
+
+
   }
   salvaNumero(){
     this.modificabile=false;
+    console.log(this.utente?.nome);
+    //this.s.addNumero()
   }
   cambiaNumero(){
     this.modificabile=true;
   }
-  
+
+
 }

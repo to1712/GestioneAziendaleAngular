@@ -89,6 +89,9 @@ background: linear-gradient(to right bottom, rgba(33, 37, 41, 1), rgba(77, 81, 8
   }
 }
 
+.logout{
+  text-decoration: none;
+}
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);

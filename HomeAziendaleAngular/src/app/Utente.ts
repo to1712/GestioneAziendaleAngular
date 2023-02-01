@@ -4,6 +4,6 @@ export interface Utente{
     email:string;
     password:string;
     ruolo:string;
-    stipendio:number;
+    stipendio:any;
     sede:string;
 }

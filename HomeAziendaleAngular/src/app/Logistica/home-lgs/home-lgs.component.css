@@ -3524,7 +3524,9 @@ textarea.form-control-lg {
   font-size: 0.875rem;
   border-radius: 0.2rem;
 }
-
+.logout{
+  text-decoration: none;
+}
 .fade {
   transition: opacity 0.15s linear;
 }

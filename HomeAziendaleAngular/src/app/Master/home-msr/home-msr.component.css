@@ -23,6 +23,9 @@ background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgb
 background: linear-gradient(to right bottom, rgba(33, 37, 41, 1), rgba(77, 81, 84, 1))
 }
 
+.logout{
+  text-decoration: none;
+}
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;

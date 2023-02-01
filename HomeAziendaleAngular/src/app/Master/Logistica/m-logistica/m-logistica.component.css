@@ -13,5 +13,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    border: 5px solid #212529;
+}
+
+.separator {
+  width: 80%;
+  border-top: 1px solid #212529;
+  margin-bottom: 10px;
 }

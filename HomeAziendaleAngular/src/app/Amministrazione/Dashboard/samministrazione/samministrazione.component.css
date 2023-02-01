@@ -14,3 +14,25 @@ width: 100%;
 td, th {
   width: 25%;
 }
+
+.tabella{
+  margin: auto;
+  width: 70%;
+  margin-bottom: 5%;
+}
+
+.container{
+justify-items: center;
+width: 100%;
+}
+
+.color{
+  background-color: #343a40;
+  color:white;
+  margin: 10px 0;
+  font-size: 15px;
+  width: 30%;
+  height: 100%;
+  position: relative;
+  left: 8px;
+}

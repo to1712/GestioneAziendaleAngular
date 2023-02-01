@@ -37,8 +37,10 @@ export class DipendentiComponent implements OnChanges{
     throw new Error('Method not implemented.');
   }
   generateEmail(firstName: string, lastName: string): string {
+    const fn = firstName.trim().replace(/\s+/g, '');
+    const ln = lastName.trim().replace(/\s+/g, '');
     const randomNumber = Math.floor(Math.random() * 1000).toString().padStart(3, "0");
-    return `${firstName}.${lastName}-${randomNumber}@technovision.it`;
+    return `${fn}.${ln}-${randomNumber}@technovision.it`;
   }
   createPassword(firstName: string, lastName: string): string {
     const initials = firstName[0] + lastName[0];
