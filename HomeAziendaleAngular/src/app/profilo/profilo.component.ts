@@ -23,7 +23,7 @@ export class ProfiloComponent implements OnInit{
     this.visualizza=this.document.defaultView?.sessionStorage.getItem('dato');
   }
   ngOnInit(): void {
-    
+
     var sessionId = this.route.queryParams.subscribe(
         params => {
       var sessionId = this.service.getSession();
@@ -32,8 +32,7 @@ export class ProfiloComponent implements OnInit{
         this.sessionId = sessionId;
         var obs: Observable<Utente> = this.service.getUtente(sessionId);
         obs.subscribe(ut => {this.utente = ut
-          console.log(this.utente.telefono);
-          this.telefono = this.utente.telefono;
+          this.email=this.utente.email;
         });
       }
       } );
@@ -49,6 +48,16 @@ export class ProfiloComponent implements OnInit{
         return;
     }
     this.s.addTelefono(this.email,this.numero);
+    var sessionId = this.route.queryParams.subscribe(
+      params => {
+    var sessionId = this.service.getSession();
+    if (sessionId != null){
+      console.log(sessionId);
+      this.sessionId = sessionId;
+      var obs: Observable<Utente> = this.service.getUtente(sessionId);
+      obs.subscribe(ut => {this.utente = ut});
+    }
+    });
   }
   cambiaNumero(){
     this.modificabile=true;

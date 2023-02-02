@@ -9,20 +9,13 @@
                   <input class="form-control" type="text" placeholder="Cerca" aria-label="Search for..." aria-describedby="btnNavbarSearch" />
                   <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
                 </div>-->
-                <form class="d-none d-md-inline-block ms-auto me-0 me-md-3 my-2 my-md-0">
-
-                  <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Cerca" aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-                    </div>
-
-                </form>
+                <form class="d-none d-md-inline-block ms-auto me-0 me-md-3 my-2 my-md-0"></form>
 
                   <a class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                     <a mat-button [matMenuTriggerFor]="menu" class="nav-link dropdown-toggle" role="button"><mat-icon>person</mat-icon></a>
                     <mat-menu #menu="matMenu" class="matMenu">
                     <button mat-menu-item  (click)="riceviComponent('pro')">Profilo</button>
-                    <a mat-menu-item  href="http://localhost:8080/views/doLogout">Logout</a>
+                    <a mat-menu-item  class="logout" href="http://localhost:8080/views/doLogout">Logout</a>
                   </mat-menu>
                 </a>
 

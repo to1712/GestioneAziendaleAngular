@@ -39,9 +39,31 @@ export class IncassiComponent {
 
   exportEXCEL() {
 
-  const wb = XLSX.utils.book_new();
-  const ws = XLSX.utils.json_to_sheet(this.dataSource.data);
-  XLSX.utils.book_append_sheet(wb, ws, 'Filiali');
-  XLSX.writeFile(wb, 'Filiali.xlsx');
+    let filteredData = [];
+
+      for (let filiale of this.filiali) {
+        console.log(filiale);
+        filteredData.push({
+          'id': filiale.id,
+          'citta': filiale.citta,
+          'incasso_gen': filiale.incasso_gen,
+          'incasso_feb': filiale.incasso_feb,
+          'incasso_mar': filiale.incasso_mar,
+          'incasso_apr': filiale.incasso_apr,
+          'incasso_mag': filiale.incasso_mag,
+          'incasso_giu': filiale.incasso_giu,
+          'incasso_lug': filiale.incasso_lug,
+          'incasso_ago': filiale.incasso_ago,
+          'incasso_set': filiale.incasso_set,
+          'incasso_ott': filiale.incasso_ott,
+          'incasso_nov': filiale.incasso_nov,
+          'incasso_dic': filiale.incasso_dic
+        });
+    }
+
+    const wb = XLSX.utils.book_new();
+    const ws = XLSX.utils.json_to_sheet(filteredData);
+    XLSX.utils.book_append_sheet(wb, ws, 'Filiali');
+    XLSX.writeFile(wb, 'IncassiFiliali.xlsx');
   }
 }

@@ -42,11 +42,35 @@ export class SpeseComponent {
 
   exportEXCEL() {
 
+    let filteredData = [];
+
+      for (let filiale of this.filiali) {
+        console.log(filiale);
+        filteredData.push({
+          'id': filiale.id,
+          'citta': filiale.citta,
+          'spese_gen': filiale.spese_gen,
+          'spese_feb': filiale.spese_feb,
+          'spese_mar': filiale.spese_mar,
+          'spese_apr': filiale.spese_apr,
+          'spese_mag': filiale.spese_mag,
+          'spese_giu': filiale.spese_giu,
+          'spese_lug': filiale.spese_lug,
+          'spese_ago': filiale.spese_ago,
+          'spese_set': filiale.spese_set,
+          'spese_ott': filiale.spese_ott,
+          'spese_nov': filiale.spese_nov,
+          'spese_dic': filiale.spese_dic
+        });
+    }
+
+
     const wb = XLSX.utils.book_new();
-    const ws = XLSX.utils.json_to_sheet(this.dataSource.data);
+    const ws = XLSX.utils.json_to_sheet(filteredData);
     XLSX.utils.book_append_sheet(wb, ws, 'Filiali');
-    XLSX.writeFile(wb, 'Filiali.xlsx');
+    XLSX.writeFile(wb, 'SpeseFiliali.xlsx');
 
 }
 
 }
+

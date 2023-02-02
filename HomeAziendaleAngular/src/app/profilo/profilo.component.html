@@ -22,7 +22,7 @@
                                   <div class="row pt-1">
                                       <div id="email" class="col-6 mb-3">
                                           <h6>Email</h6>
-                                          <p [(ngModel)]="email" class="text-muted">{{utente?.email}}</p>
+                                          <p class="text-muted">{{utente?.email}}</p>
                                       </div>
                                       <div class="col-6 mb-3">
                                           <h6 >Telefono<button id="modificaNumero" mat-button (click)="cambiaNumero()"><mat-icon>edit</mat-icon></button></h6>
@@ -30,12 +30,14 @@
                                           <div *ngIf="modificabile; else displayOnly">
                                             <mat-form-field appearance="fill">
                                               <mat-label>Inserisci numero</mat-label>
-                                              <input matInput  [(ngModel)] = "numero">
+                                              <input matInput [(ngModel)] = "numero">
                                             </mat-form-field>
-                                            
+
                                             <button mat-button id="modificaNumero" (click)="salvaNumero()"><mat-icon>done</mat-icon></button>
                                           </div>
-                                          <ng-template #displayOnly>{{utente?.telefono}} </ng-template>
+                                          <ng-template #displayOnly>
+                                          <div class="text-muted">{{utente?.telefono}}</div>
+                                          </ng-template>
                                       </div>
                                   </div>
                                   <hr class="mt-0 mb-4">

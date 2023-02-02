@@ -53,7 +53,7 @@ export class SlogisticaComponent {
 
   exportPDF() {
 
-    html2canvas(this.data).then(canvas => {
+    html2canvas((this.data),{scrollY: -window.scrollY}).then(canvas => {
     const imgWidth = 208;
     const pageHeight = 295;
     const imgHeight = canvas.height * imgWidth / canvas.width;
@@ -61,10 +61,10 @@ export class SlogisticaComponent {
 
     const contentDataURL = canvas.toDataURL('image/png');
     const pdf = new jsPDF('p', 'mm', 'a4');
-    const position = 0;
-    pdf.text("STIPENDI LOGISTICA",10,10);
+    const position = 15;
+    pdf.text("STIPENDI LOGISTICA",80,10);
     pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight);
-    pdf.save('Stipendi.pdf');
+    pdf.save('StipendiLogistica.pdf');
     });
 
 
