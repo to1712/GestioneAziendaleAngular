@@ -47,31 +47,76 @@
                   <ng-template *ngSwitchCase="'sL'" [ngTemplateOutlet]="slogistica"></ng-template>
                   <ng-template *ngSwitchCase="'sT'" [ngTemplateOutlet]="stesoreria"></ng-template>
                   <ng-template *ngSwitchCase="'sp'" [ngTemplateOutlet]="spese"></ng-template>
+                  <ng-template *ngSwitchDefault [ngTemplateOutlet]="home"></ng-template>
                 </div>
                       <ng-template #home>
+                        <video autoplay loop>
+                          <source src="assets/video.mp4" type="video/mp4">
+                          <source src="path/to/video.webm" type="video/webm">
+                          Il tuo browser non supporta il tag video.
+                        </video>
                         <div class="container-fluid px-4">
                           <h1 class="mt-4">Home</h1>
                           <ol class="breadcrumb mb-4">
                               <li class="breadcrumb-item active">Home</li>
                           </ol>
                         </div>
+
+                        <div class="grafici">
+                          <div class="grafic"><canvas id="grafico" ></canvas></div>
+                          <div class="grafic" ><canvas id="graficoS"></canvas></div>
+                        </div>
+                        
                       </ng-template>
                       <ng-template #profilo>
+                        <video autoplay loop>
+                          <source src="assets/video.mp4" type="video/mp4">
+                          <source src="path/to/video.webm" type="video/webm">
+                          Il tuo browser non supporta il tag video.
+                        </video>
                         <app-profilo></app-profilo>
                       </ng-template>
                       <ng-template #incassi>
+                        <video autoplay loop>
+                          <source src="assets/video.mp4" type="video/mp4">
+                          <source src="path/to/video.webm" type="video/webm">
+                          Il tuo browser non supporta il tag video.
+                        </video>
                         <app-incassi></app-incassi>
                       </ng-template>
+                      <video autoplay loop>
+                        <source src="assets/video.mp4" type="video/mp4">
+                        <source src="path/to/video.webm" type="video/webm">
+                        Il tuo browser non supporta il tag video.
+                      </video>
                       <ng-template #spese>
+                        <video autoplay loop>
+                          <source src="assets/video.mp4" type="video/mp4">
+                          <source src="path/to/video.webm" type="video/webm">
+                          Il tuo browser non supporta il tag video.
+                        </video>
                         <app-spese></app-spese>
                       </ng-template>
                       <ng-template #samministrazione>
+                        <video autoplay loop>
+                          <source src="assets/video.mp4" type="video/mp4">
+                          <source src="path/to/video.webm" type="video/webm">
+                          Il tuo browser non supporta il tag video.
+                        </video>
                         <app-samministrazione></app-samministrazione>
                       </ng-template>
                       <ng-template #slogistica>
+                        <video autoplay loop>
+                          <source src="assets/video.mp4" type="video/mp4">
+                          <source src="path/to/video.webm" type="video/webm">
+                          Il tuo browser non supporta il tag video.
+                        </video>
                         <app-slogistica></app-slogistica>
                       </ng-template>
                       <ng-template #stesoreria>
+                        <video autoplay loop>
+                          <source src="assets/video.mp4" type="video/mp4">
+                        </video>
                         <app-stesoreria></app-stesoreria>
                       </ng-template>
                     </main>

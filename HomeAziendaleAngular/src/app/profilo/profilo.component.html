@@ -1,5 +1,10 @@
 
 <main>
+    <video autoplay loop>
+        <source src="assets/video.mp4" type="video/mp4">
+        <source src="path/to/video.webm" type="video/webm">
+        Il tuo browser non supporta il tag video.
+      </video>
   <div class="container-fluid px-4">
     <h1 class="mt-4">Profilo</h1>
     <ol class="breadcrumb mb-4">
@@ -11,8 +16,7 @@
                   <div class="card mb-3" style="border-radius: .5rem;">
                       <div class="row g-0">
                           <div class="col-md-4 gradient-custom text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
-                                  alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
+                              <img src="/assets/200.png"  class="img-fluid my-3" style="width: 200px; height: 150px;" />
                               <h5>{{utente?.nome}} {{utente?.cognome}}</h5>
                           </div>
                           <div class="col-md-8">

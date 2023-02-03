@@ -11720,3 +11720,29 @@ body {
   font-size: 0.75rem;
   border-radius: 0.25rem !important;
 }
+.grafici{
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid #000; /* o un altro colore a tua scelta */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.grafic{
+  width: 50%;
+  height: 100%;
+}
+video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  height: auto;
+  width: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+}

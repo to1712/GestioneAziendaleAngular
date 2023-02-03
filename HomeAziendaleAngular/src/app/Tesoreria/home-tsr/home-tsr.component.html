@@ -42,22 +42,46 @@
                     <ng-template *ngSwitchCase="'bil'" [ngTemplateOutlet]="bilancio"></ng-template>
                     <ng-template *ngSwitchCase="'sti'" [ngTemplateOutlet]="stipendi"></ng-template>
                     <ng-template *ngSwitchCase="'pro'" [ngTemplateOutlet]="profilo"></ng-template>
+                    <ng-template *ngSwitchDefault [ngTemplateOutlet]="home"></ng-template>
                   </div>
                         <ng-template #home>
+                          <video autoplay loop>
+                            <source src="assets/video.mp4" type="video/mp4">
+                            <source src="path/to/video.webm" type="video/webm">
+                            Il tuo browser non supporta il tag video.
+                          </video>
                           <div class="container-fluid px-4">
                             <h1 class="mt-4">Home</h1>
                             <ol class="breadcrumb mb-4">
                                 <li class="breadcrumb-item active">Home</li>
                             </ol>
                           </div>
+                          <div class="grafici">
+                            <div class="grafic"><canvas id="grafico" ></canvas></div>
+                          </div>
                         </ng-template>
                         <ng-template #profilo>
+                          <video autoplay loop>
+                            <source src="assets/video.mp4" type="video/mp4">
+                            <source src="path/to/video.webm" type="video/webm">
+                            Il tuo browser non supporta il tag video.
+                          </video>
                           <app-profilo></app-profilo>
                         </ng-template>
                         <ng-template #bilancio>
+                          <video autoplay loop>
+                            <source src="assets/video.mp4" type="video/mp4">
+                            <source src="path/to/video.webm" type="video/webm">
+                            Il tuo browser non supporta il tag video.
+                          </video>
                           <app-bilancio></app-bilancio>
                         </ng-template>
                         <ng-template #stipendi>
+                          <video autoplay loop>
+                            <source src="assets/video.mp4" type="video/mp4">
+                            <source src="path/to/video.webm" type="video/webm">
+                            Il tuo browser non supporta il tag video.
+                          </video>
                           <app-stipendi></app-stipendi>
                         </ng-template>
                     <footer class="py-4 bg-light mt-auto">

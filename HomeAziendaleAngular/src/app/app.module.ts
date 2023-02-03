@@ -43,6 +43,7 @@ import { MAmministrazioneComponent } from './Master/Amministrazione/m-amministra
 import { DipendentiComponent } from './Master/Dipendenti/dipendenti/dipendenti.component';
 import { MatButtonModule } from '@angular/material/button';
 
+
 @NgModule({
   declarations: [
     AppComponent,
